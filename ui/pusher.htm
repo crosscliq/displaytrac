@@ -10,15 +10,23 @@
     var pusher = new Pusher('f3b8b0aeaf31c105168e');
     
 
-    var channel = pusher.subscribe('nodes');
-    channel.bind('my_event', function(data) {
+    var nodesChannel = pusher.subscribe('nodes');
+    nodesChannel.bind('my_event', function(data) {
       alert(data.message);
     });
 
 
-    var channel = pusher.subscribe('images');
-    channel.bind('addimage', function(data) {
-      alert(data.message);
+    var imagesChannel = pusher.subscribe('images');
+    imagesChannel.bind('addimage', function(data) {
+     
+      var html ='';
+      html = '<li id="'+data.id+'" class="span3 active"><a class="thumb" href="'+data.href+'" data-gallery="gallery"><div class="details"><span class="ellipsis"><span class="white">'+data.address+'</span><br/><span class="meta glyphicons calendar single"><i></i> on '+data.time+' <span>1 hour ago</span></span></span></div><img src="'+data.img+'" alt="photo" /></a></li>'
+
+      $("#gallery-4").prepend(html);
+      
+
+      setTimeout(function() {  $('#'+data.id).removeClass('active'); }, 5000);
+
     });
 
 

@@ -26,7 +26,7 @@ $db=new DB\Jig('db/',DB\Jig::FORMAT_JSON);
 $dash=new DB\Jig\Mapper($db,'proofofplacement');
 $dash->load(array('@dash=?','1'));
 
-$f3->set('placements', $dash->placements);
+$f3->set('placements', array_reverse($dash->placements));
 
 
         $view=new View;
@@ -195,8 +195,9 @@ $dash->load(array('@dash=?','1'));
 
 $placements = $dash->placements;
 $date = new DateTime();
-
+$id = count($placements) + 1;
 $array = array(
+		"id" => $id,
 		"href" => $image[0],
         "address" =>"122 S Pine Street Salt Lake City, UT 84037",
         "time" => $date->format('Y-m-d H:i:s'),
@@ -214,7 +215,7 @@ $app_key = 'f3b8b0aeaf31c105168e';
 $app_secret = '87a99b695fda2400d4fd';
 
 $pusher = new Pusher( $app_key, $app_secret, $app_id );
-		$pusher->trigger('images', $array, 'posted image named'. $image[0] );
+	$event = 	$pusher->trigger('images', 'addimage' , $array );
 
 
 		$view=new View;
@@ -223,6 +224,19 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 	}
 );
 
+$f3->route('GET /pusher',
+	function($f3) {
+
+	//event to pusher
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+	$event = 	$pusher->trigger('images', 'addImage', 'posted image named' );
+
+	}
+);
 
 
 $f3->route('GET /m/index2',
