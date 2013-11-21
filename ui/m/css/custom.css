@@ -1,0 +1,45 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////// Custom CSS Rules Start                                                                             */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.contactFormWrapper input[type="radio"] {
+	-webkit-appearance: radio;
+	-moz-appearance: radio;
+	width: auto;
+	display: inline-block;
+}
+
+.contactFormWrapper label {
+	height: auto;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.form-group .form-group.child {
+	display: none;
+}
+.child {
+	display: none;
+}
+.accord-btn {
+	background:#4baad3;
+	font-size: 17px;
+	padding-top: 8px;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	margin: 0px auto;
+	text-align: center;
+
+	width: 100%;
+}
+.accord-contents {
+	display: none;
+	padding:10px;
+}
+textarea {
+	width: 100%;
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////// Custom CSS Rules End                                                                               */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

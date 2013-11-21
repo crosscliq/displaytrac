@@ -136,6 +136,12 @@
    // sys.addEdge('a','d')
    // sys.addEdge('a','e')
 
+     sys.addEdge('x','xz')
+    sys.addEdge('x','xv')
+    sys.addEdge('x','xc')
+    sys.addEdge('x','xs')
+
+
     var nodes=new Array("b","c","d","e","f","g","h","i","j");
     $('#addnode').click(function(){
       sys.addEdge('a',nodes.pop())
