@@ -68,6 +68,9 @@
 	
 	<!-- LESS.js Library -->
 	<script src="/ui/theme/scripts/plugins/system/less.min.js"></script>
+
+	 <script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
+
 </head>
 <body class="">
 	
@@ -282,7 +285,7 @@
 		<!-- // Sidebar Menu END -->
 				
 		<!-- Content -->
-		<div id="content"">
+		<div id="content">
 	<h2>NIMBUS<span> by Crosscliq</span></h2>
 <div class="innerLR">
 
@@ -780,7 +783,7 @@
            				 <h4 class="heading glyphicons pie_chart"><i></i>Node Tree | BBY Experience Zone - TWO BAY</h4>
            			 </div>
             			<div class="widget-body">
-           				<div id="pie" style="height: 200px;"></div>
+           				<div id="nodetree" ><?php echo Base::instance()->raw($nodetree); ?></div>
        			</div>
        		</div>
             
@@ -1038,6 +1041,9 @@
 	<!-- Dashboard Demo Script -->
 	<script src="/ui/theme/scripts/demo/index.js?1369753442"></script>
 	
+	 <script src="/ui/arbor/arbor.js" type="text/javascript"></script>
+  <script src="/ui/arbor/arbor-tween.js" type="text/javascript"></script>
+ <script src="/ui/arbor/main.js" type="text/javascript"></script>
 
 </body>
 </html>
