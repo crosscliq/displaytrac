@@ -82,9 +82,38 @@ $image = $web->receive(function($file){
 );
 
 
+$image = array_keys($image);
 
-var_dump($image);
-die();
+
+
+$db=new DB\Jig('db/',DB\Jig::FORMAT_JSON);
+$dash=new DB\Jig\Mapper($db,'proofofplacement');
+$dash->load(array('@dash=?','1'));
+
+$placements = $dash->placements;
+$date = new DateTime();
+
+$array = array(
+		"href" => $image[0],
+        "address" =>"122 S Pine Street Salt Lake City, UT 84037",
+        "time" => $date->format('Y-m-d H:i:s'),
+        "img" => $image[0]
+	);
+
+$placements[] = $array;
+$dash->placements = $placements;
+$dash->save();
+
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+		$pusher->trigger('images', $array, 'posted image named'. $image[0] ));
+		
+	}
+);
+
 
 
     }
