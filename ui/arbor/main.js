@@ -41,7 +41,7 @@
         // which allow you to step through the actual node objects but also pass an
         // x,y point in the screen's coordinate system
         // 
-        ctx.fillStyle = "black"
+        ctx.fillStyle = "#1f1f1f"
         ctx.fillRect(0,0, canvas.width, canvas.height)
         
         particleSystem.eachEdge(function(edge, pt1, pt2){
@@ -64,7 +64,7 @@
 
           // draw a rectangle centered at pt
           var w = 10
-          ctx.fillStyle = (node.data.alone) ? "orange" : "#9dce6e"
+          ctx.fillStyle = (node.data.alone) ? "red" : "#4baad3"
           ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w)
         })    			
       },
@@ -130,12 +130,19 @@
     sys.renderer = Renderer("#viewport") // our newly created renderer will have its .init() method called shortly by sys...
 
     // add some nodes to the graph and watch it go...
-    
-    sys.addEdge('a','b')
-    sys.addEdge('a','c')
-    sys.addEdge('a','d')
-    sys.addEdge('a','e')
-    sys.addNode('f', {alone:true, mass:.25})
+
+  //  sys.addEdge('a','b')
+   // sys.addEdge('a','c')
+   // sys.addEdge('a','d')
+   // sys.addEdge('a','e')
+
+    var nodes=new Array("b","c","d","e","f","g","h","i","j");
+    $('#addnode').click(function(){
+      sys.addEdge('a',nodes.pop())
+    });
+
+
+    //sys.addNode('f', {alone:true, mass:.25})
 
     // or, equivalently:
     //
