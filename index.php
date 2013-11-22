@@ -189,11 +189,12 @@ $f3->route('GET /m',
 $f3->route('POST /ajax/upload',
   function($f3) {
     $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Uploaded Proof Image';
     $data['color'] = 'green';
 
-    nodePusher($f3->get('SESSION.id').'home', $f3->get('SESSION.id').'index2', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'index2', $data);
        //get the file that we uploaded
       $file = $_FILES['uploader'];
 
