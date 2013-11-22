@@ -2,7 +2,7 @@
 //  arbor-tween.js
 //  smooth transitions with a realtime clock
 //
-//  Copyright (c) 2012 Samizdat Drafting Co.
+//  Copyright (c) 2011 Samizdat Drafting Co.
 // 
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,7 +27,7 @@
 //
 
 //  Easing Equations in easing.js:
-//  Copyright Â© 2001 Robert Penner. All rights reserved.
+//  Copyright © 2001 Robert Penner. All rights reserved.
 //  
 //  Open source under the BSD License. Redistribution and use in source
 //  and binary forms, with or without modification, are permitted
@@ -65,16 +65,16 @@
 
   arbor = (typeof(arbor)!=='undefined') ? arbor : {}
   $.extend(arbor, {
-    // not really user-serviceable; use the ParticleSystemâ€™s .tween* methods instead
+    // not really user-serviceable; use the ParticleSystem’s .tween* methods instead
     Tween:Tween,
     
     // immutable object with useful methods
     colors:{
       CSS:Colors.CSS,           // dictionary: {colorname:#fef2e2,...}
-      validate:Colors.validate, // Æ’(str) -> t/f
-      decode:Colors.decode,     // Æ’(hexString_or_cssColor) -> {r,g,b,a}
-      encode:Colors.encode,     // Æ’({r,g,b,a}) -> hexOrRgbaString
-      blend:Colors.blend        // Æ’(color, opacity) -> rgbaString
+      validate:Colors.validate, // ƒ(str) -> t/f
+      decode:Colors.decode,     // ƒ(hexString_or_cssColor) -> {r,g,b,a}
+      encode:Colors.encode,     // ƒ({r,g,b,a}) -> hexOrRgbaString
+      blend:Colors.blend        // ƒ(color, opacity) -> rgbaString
     }
   })
   
