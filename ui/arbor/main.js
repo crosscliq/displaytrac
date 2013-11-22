@@ -147,8 +147,12 @@
    
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
-      sys.addEdge(data.id,data.child)
-	console.log(data.child);
+
+ 	//var cat = sys.addNode('cat',{'color':'blue','shape':'dot','label':'cat'});
+	//var dog = sys.addNode('dog',{'color':'green','shape':'dot','label':'dog'});
+       sys.addEdge(data.id,data.child)
+
+	console.log('added edge');
     });
 
 

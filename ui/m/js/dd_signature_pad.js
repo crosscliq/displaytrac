@@ -72,8 +72,8 @@ var dd_alert = {
 var dd_allowTools = {
 	'picker' : false,
 	'pencil' : false,
-	'undo' : true,
-	'delete' : true
+	'undo' : false,
+	'delete' : false
 };
 // Position of pencil picker display;
 var dd_pencilPicker_show = "left";

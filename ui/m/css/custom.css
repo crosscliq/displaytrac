@@ -19,7 +19,7 @@
 .form-group .form-group.child {
 	display: none;
 }
-.child {
+ .child {
 	display: none;
 }
 .accord-btn {
@@ -27,11 +27,28 @@
 	font-size: 17px;
 	padding-top: 8px;
 	margin-bottom: 8px;
-	padding-bottom: 8px;
+	padding: 8px;
 	margin: 0px auto;
-	text-align: center;
-
 	width: 100%;
+}
+.unchecked { 
+	opacity:0.6;
+}
+.accord-yes {
+	display:block;
+	height:16px;
+	width:16px;
+	float:right;
+	margin-right:20px;
+	background:url(../images/icons/smallIcons/16/1/iconCheckmarkBg16.png) no-repeat;
+}
+.accord-no {
+	display:block;
+	height:16px;
+	width:16px;
+	float:right;
+	margin-right:20px;
+	background:url(../images/icons/smallIcons/16/1/iconNoBg16.png) no-repeat;
 }
 .accord-contents {
 	display: none;
