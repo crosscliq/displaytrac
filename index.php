@@ -367,6 +367,23 @@ $f3->route('GET /m/global',
 	}
 );
 
+$f3->route('GET /m/global/@id',
+  function($f3) {
+    $data = array();
+    $data['type'] = 'node';
+    $data['name'] =  $f3->get('PARAMS.id');
+    $data['color'] = 'red';
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
+        
+        echo $view->render('m/globalTrac.html');
+
+  }
+);
+
+
+
 $f3->route('GET /m/samsung_55F7000',
   function($f3) {
     $data = array();
