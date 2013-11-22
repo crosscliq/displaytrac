@@ -136,17 +136,18 @@
    // sys.addEdge('a','d')
    // sys.addEdge('a','e')
 
-     sys.addEdge('x','xz')
-    sys.addEdge('x','xv')
-    sys.addEdge('x','xc')
-    sys.addEdge('x','xs')
+   //  sys.addEdge('x','xz')
+  //  sys.addEdge('x','xv')
+  //  sys.addEdge('x','xc')
+  //  sys.addEdge('x','xs')
 
      
 
-    var nodes=new Array("b","c","d","e","f","g","h","i","j");
+  //  var nodes=new Array("b","c","d","e","f","g","h","i","j");
+   
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
-      sys.addEdge('a',nodes.pop())
+      sys.addEdge(data.id,data.child)
     });
 
 
