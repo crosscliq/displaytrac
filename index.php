@@ -177,6 +177,8 @@ $f3->route('POST /m/index2',
 
 //get the file that we uploaded
 			$file = $_FILES['image'];
+
+
 $overwrite = false; // set to true, to overwrite an existing file; Default: false
 $slug = true; // rename file to filesystem-friendly version
 $web = Web::instance();
