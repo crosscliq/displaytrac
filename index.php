@@ -188,8 +188,12 @@ $f3->route('GET /m',
 );
 $f3->route('POST /ajax/upload',
   function($f3) {
+    $data = array();
+    $data['type'] = 'node';
+    $data['name'] = 'Uploaded Proof Image';
+    $data['color'] = 'green';
 
-    nodePusher($f3->get('SESSION.id').'home', $f3->get('SESSION.id').'index2');
+    nodePusher($f3->get('SESSION.id').'home', $f3->get('SESSION.id').'index2', $data);
        //get the file that we uploaded
       $file = $_FILES['uploader'];
 
@@ -400,12 +404,13 @@ $f3->route('GET /m/global',
 $f3->route('GET /m/samsung_55F7000',
   function($f3) {
     $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung 55F7000';
     $data['color'] = 'red';
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_55F7000', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_55F7000', $data);
         
         echo $view->render('m/samsung_55F7000.html');
 
@@ -415,12 +420,13 @@ $f3->route('GET /m/samsung_55F7000',
 $f3->route('GET /m/samsung_55F7100',
   function($f3) {
      $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung 55F7100';
     $data['color'] = 'red';
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_55F7100', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_55F7100', $data);
         
         echo $view->render('m/samsung_55F7100.html');
 
@@ -430,12 +436,13 @@ $f3->route('GET /m/samsung_55F7100',
 $f3->route('GET /m/samsung_60F8000',
   function($f3) {
       $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung 60F8000';
     $data['color'] = 'red'; 
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_60F8000', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_60F8000', $data);
         
         echo $view->render('m/samsung_60F8000.html');
 
@@ -445,11 +452,12 @@ $f3->route('GET /m/samsung_60F8000',
 $f3->route('GET /m/samsung_GTN8013',
   function($f3) {
     $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung GTN8013';
     $data['color'] = 'red'; 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_GTN8013', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_GTN8013', $data);
         
         echo $view->render('m/samsung_GTN8013.html');
 
@@ -460,12 +468,13 @@ $f3->route('GET /m/samsung_HWF750',
   function($f3) {
 
     $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung GTN8013';
     $data['color'] = 'red';
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_HWF750',$data  );
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_HWF750',$data  );
         
         echo $view->render('m/samsung_HWF750.html');
 
@@ -477,12 +486,13 @@ $f3->route('GET /m/samsung_HWF750_sub',
   function($f3) {
 
     $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung GTN8013';
     $data['color'] = 'red';
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_HWF750_sub', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_HWF750_sub', $data);
         
         echo $view->render('m/samsung_HWF750_sub.html');
 
@@ -493,12 +503,13 @@ $f3->route('GET /m/samsung_smart_remote',
   function($f3) {
 
      $data = array();
-    $data['type'] = 'node';
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
     $data['name'] = 'Samsung GTN8013';
     $data['color'] = 'red';
 
     $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_smart_remote',  $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_smart_remote',  $data);
         
         echo $view->render('m/samsung_smart_remote.html');
 
