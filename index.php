@@ -68,18 +68,6 @@ $f3->route('GET /dav',
 
 
 
-
-$f3->route('GET /form',
-    function($f3) {
-       		
-
-        $view=new View;
-
-        
-        echo $view->render('form.htm');
-    }
-);
-
 $f3->set('UPLOADS','assets/'); // don't forget to set an Upload directory, and make it writable!
 
 $f3->route('POST /upload/image',
@@ -153,19 +141,6 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 
 
 
-$f3->route('POST /controller/input',
-	function($f3) {
-$app_id = '59967';
-$app_key = 'f3b8b0aeaf31c105168e';
-$app_secret = '87a99b695fda2400d4fd';
-
-$pusher = new Pusher( $app_key, $app_secret, $app_id );
-		$pusher->trigger('game', $f3->get('POST.key'), 'server knows you pressed '. $f3->get('POST.key'));
-		
-	}
-);
-
-
 
 // MOBILE ROUTES BELOW HERE
 
@@ -186,6 +161,8 @@ $f3->route('GET /m',
 
 	}
 );
+
+
 $f3->route('POST /ajax/upload',
   function($f3) {
     $data = array();
@@ -233,7 +210,7 @@ $image = $web->receive(function($file){
 $f3->route('POST /m/index2',
 	function($f3) {
 
-		nodePusher($f3->get('SESSION.id').'home', $f3->get('SESSION.id').'index2');
+		nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'index2');
        //get the file that we uploaded
 			$file = $_FILES['image'];
 
@@ -342,30 +319,18 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 	}
 );
 
-$f3->route('GET /pusher',
-	function($f3) {
 
-	//event to pusher
-$app_id = '59967';
-$app_key = 'f3b8b0aeaf31c105168e';
-$app_secret = '87a99b695fda2400d4fd';
-
-$pusher = new Pusher( $app_key, $app_secret, $app_id );
-	$event = 	$pusher->trigger('images', 'addImage', 'posted image named' );
-
-	}
-);
 
 
 $f3->route('GET /m/index2',
 	function($f3) {
     $data = array();
     $data['type'] = 'child';
-    $data['name'] = 'Index 2';
+    $data['name'] = 'Tracking Form Success';
     $data['color'] = 'red';
 		$view=new View;
 
-        nodePusher($f3->get('SESSION.id').'home', $f3->get('SESSION.id').'index2', $data);
+        nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'index2', $data);
         
         echo $view->render('m/index2.html');
 
@@ -375,11 +340,11 @@ $f3->route('GET /m/index2',
 
 $f3->route('GET /m/map',
 	function($f3) {
-    $data['type'] = 'node';
+    $data['type'] = 'child';
     $data['name'] = 'Map';
     $data['color'] = 'red';
 		$view=new View;
-		nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'map', $data);
+		nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'map', $data);
         
         echo $view->render('m/map.html');
 
