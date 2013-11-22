@@ -148,7 +148,7 @@
               selected = (nearest.distance < 50) ? nearest : null
               if (selected){
                  dom.addClass('linkable')
-                 window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'')
+                 //window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'')
               }
               else{
                  dom.removeClass('linkable')
@@ -170,14 +170,14 @@
             _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
             nearest = dragged = sys.nearest(_mouseP);
             
-            if (nearest && selected && nearest.node===selected.node){
-              var link = selected.node.data.link
-              if (link.match(/^#/)){
-                 $(that).trigger({type:"navigate", path:link.substr(1)})
-              }else{
-                 window.location = link
-              }
-              return false
+           // if (nearest && selected && nearest.node===selected.node){
+           //   var link = selected.node.data.link
+            //  if (link.match(/^#/)){
+            //     $(that).trigger({type:"navigate", path:link.substr(1)})
+           //   }else{
+            //     window.location = link
+           //   }
+           //   return false
             }
             
             
@@ -343,10 +343,15 @@
 
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
-	
-var animals = sys.addNode('217',{'color':'red','shape':'dot','label':'#217'});
-       sys.addEdge('217',data.child)
 
+	if (data.type=="node") {
+	
+		var rootNode = sys.addNode(data.name,{'color':data.color,'shape':'dot','label':data.name});
+	} else {
+
+       sys.addEdge('217',data.name)
+
+	}
 
 
     });
