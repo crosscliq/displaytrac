@@ -141,9 +141,11 @@
     sys.addEdge('x','xc')
     sys.addEdge('x','xs')
 
+     
 
     var nodes=new Array("b","c","d","e","f","g","h","i","j");
-    $('#addnode').click(function(){
+     var nodesChannel = pusher.subscribe('nodes');
+    nodesChannel.bind('addnode', function(data) {
       sys.addEdge('a',nodes.pop())
     });
 

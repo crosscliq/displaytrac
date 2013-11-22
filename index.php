@@ -12,6 +12,21 @@ putenv("PUSHER_APP_SECRET=$app_secret");
 putenv("PUSHER_APP_KEY=$app_key");
 putenv("PUSHER_APP_ID=$app_id ");
 
+function nodePusher($id, $child) {
+	
+$data = array('id'=> $id, 'child' =>$child);
+	//event to pusher
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+	$event = 	$pusher->trigger('nodes', 'addnode', $data );
+
+}
+
+
+
 
 $f3->set('DEBUG',1);
 if ((float)PCRE_VERSION<7.9)
@@ -145,7 +160,10 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 $f3->route('GET /m',
 	function($f3) {
 
+		$f3->set('SESSION.id', session_id());
+
 		$view=new View;
+
 
         
         echo $view->render('m/index.html');
