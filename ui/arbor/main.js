@@ -29,46 +29,95 @@
         
         // set up some event handlers to allow for node-dragging
         that.initMouseHandling()
+
+
+
+
       },
       
-      redraw:function(){
-        // 
-        // redraw will be called repeatedly during the run whenever the node positions
-        // change. the new positions for the nodes can be accessed by looking at the
-        // .p attribute of a given node. however the p.x & p.y values are in the coordinates
-        // of the particle system rather than the screen. you can either map them to
-        // the screen yourself, or use the convenience iterators .eachNode (and .eachEdge)
-        // which allow you to step through the actual node objects but also pass an
-        // x,y point in the screen's coordinate system
-        // 
-        ctx.fillStyle = "#1f1f1f"
-        ctx.fillRect(0,0, canvas.width, canvas.height)
-        
-        particleSystem.eachEdge(function(edge, pt1, pt2){
-          // edge: {source:Node, target:Node, length:#, data:{}}
-          // pt1:  {x:#, y:#}  source position in screen coords
-          // pt2:  {x:#, y:#}  target position in screen coords
-
-          // draw a line from pt1 to pt2
-          ctx.strokeStyle = "rgba(255,255,255, .333)"
-          ctx.lineWidth = 1
-          ctx.beginPath()
-          ctx.moveTo(pt1.x, pt1.y)
-          ctx.lineTo(pt2.x, pt2.y)
-          ctx.stroke()
+  redraw:function(){
+        gfx.clear()
+        sys.eachEdge(function(edge, p1, p2){
+          if (edge.source.data.alpha * edge.target.data.alpha == 0) return
+          gfx.line(p1, p2, {stroke:"#b2b19d", width:2, alpha:edge.target.data.alpha})
         })
-
-        particleSystem.eachNode(function(node, pt){
-          // node: {mass:#, p:{x,y}, name:"", data:{}}
-          // pt:   {x:#, y:#}  node position in screen coords
-
-          // draw a rectangle centered at pt
-          var w = 10
-          ctx.fillStyle = (node.data.alone) ? "red" : "#4baad3"
-          ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w)
-        })    			
+        sys.eachNode(function(node, pt){
+          var w = Math.max(20, 20+gfx.textWidth(node.name) )
+          if (node.data.alpha===0) return
+          if (node.data.shape=='dot'){
+            gfx.oval(pt.x-w/2, pt.y-w/2, w, w, {fill:node.data.color, alpha:node.data.alpha})
+            gfx.text(node.name, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:12})
+            gfx.text(node.name, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:12})
+          }else{
+            gfx.rect(pt.x-w/2, pt.y-8, w, 20, 4, {fill:node.data.color, alpha:node.data.alpha})
+            gfx.text(node.name, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:12})
+            gfx.text(node.name, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:12})
+          }
+        })
+        that._drawVignette()
       },
       
+      _drawVignette:function(){
+        var w = canvas.width
+        var h = canvas.height
+        var r = 20
+
+        if (!_vignette){
+          var top = ctx.createLinearGradient(0,0,0,r)
+          top.addColorStop(0, "#e0e0e0")
+          top.addColorStop(.7, "rgba(255,255,255,0)")
+
+          var bot = ctx.createLinearGradient(0,h-r,0,h)
+          bot.addColorStop(0, "rgba(255,255,255,0)")
+          bot.addColorStop(1, "white")
+
+          _vignette = {top:top, bot:bot}
+        }
+        
+        // top
+        ctx.fillStyle = _vignette.top
+        ctx.fillRect(0,0, w,r)
+
+        // bot
+        ctx.fillStyle = _vignette.bot
+        ctx.fillRect(0,h-r, w,r)
+      },
+
+      switchMode:function(e){
+        if (e.mode=='hidden'){
+          dom.stop(true).fadeTo(e.dt,0, function(){
+            if (sys) sys.stop()
+            $(this).hide()
+          })
+        }else if (e.mode=='visible'){
+          dom.stop(true).css('opacity',0).show().fadeTo(e.dt,1,function(){
+            that.resize()
+          })
+          if (sys) sys.start()
+        }
+      },
+      
+      switchSection:function(newSection){
+        var parent = sys.getEdgesFrom(newSection)[0].source
+        var children = $.map(sys.getEdgesFrom(newSection), function(edge){
+          return edge.target
+        })
+        
+        sys.eachNode(function(node){
+          if (node.data.shape=='dot') return // skip all but leafnodes
+
+          var nowVisible = ($.inArray(node, children)>=0)
+          var newAlpha = (nowVisible) ? 1 : 0
+          var dt = (nowVisible) ? .5 : .5
+          sys.tweenNode(node, dt, {alpha:newAlpha})
+
+          if (newAlpha==1){
+            node.p.x = parent.p.x + .05*Math.random() - .025
+            node.p.y = parent.p.y + .05*Math.random() - .025
+            node.tempMass = .001
+          }
+        })
+      },      
       initMouseHandling:function(){
         // no-nonsense drag and drop (thanks springy.js)
         var dragged = null;
@@ -128,31 +177,15 @@
     var sys = arbor.ParticleSystem(1000, 600, 0.5) // create the system with sensible repulsion/stiffness/friction
     sys.parameters({gravity:true}) // use center-gravity to make the graph settle nicely (ymmv)
     sys.renderer = Renderer("#viewport") // our newly created renderer will have its .init() method called shortly by sys...
-
-    // add some nodes to the graph and watch it go...
-
-  //  sys.addEdge('a','b')
-   // sys.addEdge('a','c')
-   // sys.addEdge('a','d')
-   // sys.addEdge('a','e')
-
-   //  sys.addEdge('x','xz')
-  //  sys.addEdge('x','xv')
-  //  sys.addEdge('x','xc')
-  //  sys.addEdge('x','xs')
-
-     
-
-  //  var nodes=new Array("b","c","d","e","f","g","h","i","j");
    
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
+	
 
- 	//var cat = sys.addNode('cat',{'color':'blue','shape':'dot','label':'cat'});
-	//var dog = sys.addNode('dog',{'color':'green','shape':'dot','label':'dog'});
        sys.addEdge(data.id,data.child)
 
-	console.log('added edge');
+
+
     });
 
 
