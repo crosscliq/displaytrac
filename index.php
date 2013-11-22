@@ -159,7 +159,7 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 
 $f3->route('GET /m',
 	function($f3) {
-
+		session_start();
 		$f3->set('SESSION.id', session_id());
 		echo $f3->get('SESSION.id');
 		$view=new View;
