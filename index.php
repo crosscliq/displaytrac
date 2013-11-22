@@ -161,10 +161,10 @@ $f3->route('GET /m',
 	function($f3) {
 
 		$f3->set('SESSION.id', session_id());
-
+		echo $f3->get('SESSION.id');
 		$view=new View;
 
-
+		nodePusher($f3->get('SESSION.id'), '0');
         
         echo $view->render('m/index.html');
 
@@ -175,6 +175,7 @@ $f3->route('GET /m',
 $f3->route('POST /m/index2',
 	function($f3) {
 
+		nodePusher($f3->get('SESSION.id'), 'index2');
 //get the file that we uploaded
 			$file = $_FILES['image'];
 $overwrite = false; // set to true, to overwrite an existing file; Default: false
@@ -273,7 +274,7 @@ $f3->route('GET /m/map',
 	function($f3) {
 
 		$view=new View;
-
+		nodePusher($f3->get('SESSION.id'), 'map');
         
         echo $view->render('m/map.html');
 
@@ -285,7 +286,7 @@ $f3->route('GET /m/global',
 	function($f3) {
 
 		$view=new View;
-
+		nodePusher($f3->get('SESSION.id'), 'global');
         
         echo $view->render('m/globalTrac.html');
 
