@@ -10,10 +10,7 @@
     var pusher = new Pusher('f3b8b0aeaf31c105168e');
     
 
-    var nodesChannel = pusher.subscribe('nodes');
-    nodesChannel.bind('my_event', function(data) {
-      alert(data.message);
-    });
+   
 
 
     var imagesChannel = pusher.subscribe('images');
