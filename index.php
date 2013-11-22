@@ -12,9 +12,11 @@ putenv("PUSHER_APP_SECRET=$app_secret");
 putenv("PUSHER_APP_KEY=$app_key");
 putenv("PUSHER_APP_ID=$app_id ");
 
-function nodePusher($id, $child) {
+function nodePusher($id, $child, $data = array()) {
 	
-$data = array('id'=> $id, 'child' =>$child);
+$data['id'] = $id; 
+$data['child'] = $child;
+
 	//event to pusher
 $app_id = '59967';
 $app_key = 'f3b8b0aeaf31c105168e';
@@ -304,6 +306,88 @@ $f3->route('GET /m/global',
 
 	}
 );
+
+$f3->route('GET /m/samsung_55F7000',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_55F7000');
+        
+        echo $view->render('m/samsung_55F7000.html');
+
+  }
+);
+
+$f3->route('GET /m/samsung_55F7100',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_55F7100');
+        
+        echo $view->render('m/samsung_55F7100.html');
+
+  }
+);
+
+$f3->route('GET /m/samsung_60F8000',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_60F8000');
+        
+        echo $view->render('m/samsung_60F8000.html');
+
+  }
+);
+
+$f3->route('GET /m/samsung_GTN8013',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_GTN8013');
+        
+        echo $view->render('m/samsung_GTN8013.html');
+
+  }
+);
+
+$f3->route('GET /m/samsung_HWF750',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_HWF750');
+        
+        echo $view->render('m/samsung_HWF750.html');
+
+  }
+);
+
+
+$f3->route('GET /m/samsung_HWF750_sub',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_HWF750_sub');
+        
+        echo $view->render('m/samsung_HWF750_sub.html');
+
+  }
+);
+
+$f3->route('GET /m/samsung_smart_remote',
+  function($f3) {
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'samsung_smart_remote');
+        
+        echo $view->render('m/samsung_smart_remote.html');
+
+  }
+);
+
+
+
+
 
 
 $f3->run();
