@@ -2,8 +2,18 @@ jQuery(document).ready(function($) {
 
   $('.accord-btn').click(function() {
    accord_child($(this));
-   cons
+     });
+
+
+  $('.close-accord').click(function() {
+   var parent = $(this).closest('.accord').children('h4').children('div');
+    parent.removeClass('unchecked');
+    parent.addClass('accord-yes');
+    parent.removeClass('accord-no');
+    accord_child($(this));
+
   });
+
 
   $('.show-child').click(function() {
     show_child($(this));

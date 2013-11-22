@@ -7498,7 +7498,7 @@ div.glyphicons.glyphicon-primary i:before {
     padding: 3px;
     z-index:11;
  }
-.active {
+.menuactive {
 	background:#0088cc!important;
 }
 

@@ -148,6 +148,7 @@
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
       sys.addEdge(data.id,data.child)
+	console.log(data.child);
     });
 
 

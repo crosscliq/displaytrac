@@ -221,11 +221,11 @@
                     <li class="hasSubmenu active">
                         <a class="" href="#menu-recent-stats" data-toggle="collapse"><i></i><span>PROGRAMS</span></a>
                         <ul class="collapse in" id="menu-recent-stats">
-                            <li><a class="menuactive" href="#"><i></i><span>Experience Zone</span></a></li>
+                            <li><a class="" href="#"><i></i><span>Experience Zone</span></a></li>
                             <li><a class="" href="#"><i></i><span>UHD Endcap</span></a></li>
                             <li><a class="" href="#"><i></i><span>N-Screen</span></a></li>
                             <li><a class="" href="#"><i></i><span>Galaxy Smash Table</span></a></li>
-                            <li><a class="" href="/dav"><i></i><span>DAV Multi-Room</span></a></li>
+                            <li><a class="menuactive" href="index-DAV.html"><i></i><span>DAV Multi-Room</span></a></li>
                             <li><a class="" href="#"><i></i><span>Velocity Endcap</span></a></li>
                         </ul>
                     </li>
@@ -293,7 +293,7 @@
 <div class="pagination pagination-left margin-none">
 	<ul>
 		<li class="disabled"><a href="#">DAV</a></li>
-            <li class="disabled"><a href="#">Experience Zone</a></li>
+            <li class="disabled"><a href="#">Multi-Room</a></li>
 		<li class="active"><a href="#">Best Buy</a></li>
 
 	</ul>
@@ -435,7 +435,7 @@
 	<!-- Website Traffic Chart -->
 	<div class="widget" data-toggle="collapse-widget">
 		<div class="widget-head">
-			<h4 class="heading glyphicons cardio"><i></i>Timeline | March 1-30 | BBY Experience Zone - TWO BAY ( <a href="#" onClick="lplot.setSelection({ xaxis: { from: 0, to: 6 }, x2axis: { from: 0, to: 6 } });">Ship</a> | <a href="#" onClick="lplot.setSelection({ xaxis: { from: 9, to: 23 }, x2axis: { from: 0, to: 6 } });">Install</a> )</h4>
+			<h4 class="heading glyphicons cardio"><i></i>Timeline | February 15 - March 7 | BBY Experience Zone - TWO BAY ( <a href="#" onClick="lplot.setSelection({ xaxis: { from: 0, to: 6 }, x2axis: { from: 0, to: 6 } });">Ship</a> | <a href="#" onClick="lplot.setSelection({ xaxis: { from: 9, to: 23 }, x2axis: { from: 0, to: 6 } });">Install</a> )</h4>
 		</div>
            <!-- <div class="window2" style="position:absolute; left: 230px; top: 55px; width:45%; height:70%; border: 1px solid #60b1d0; z-index:999; background-color: rgba(96,177,208,.2);"><p style="margin-left: 5px; margin-top: 5px;">Install Window</p></div>
             <div class="window2" style="position:absolute; left: 39px; top: 55px; width:16%; height:70%; border: 1px solid #60b1d0; z-index:999; background-color: rgba(96,194,208,.2);"><p style="margin-left: 5px; margin-top: 5px;">Ship Window</p></div>
@@ -743,12 +743,7 @@
 		<!-- Gallery Layout -->
 		<div id="placement" class="gallery gallery-2">
 			<ul class="row-fluid" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
-				<?php foreach ($placements as $placement) : ?>
-				<li class="span3"><a class="thumb" href="<?=$placement['href']?>" data-gallery="gallery"><div class="details"><span class="ellipsis">
-									<span class="white"><?=$placement['address']?></span><br/>
-									<span class="meta glyphicons calendar single"><i></i> on <?=$placement['time']?> <span>1 hour ago</span></span>
-								</span></div><img src="<?=$placement['img']?>" alt="photo" /></a></li>
-				<?php endforeach; ?>
+			
 
 								
 							
@@ -776,7 +771,7 @@
            				 <h4 class="heading glyphicons pie_chart"><i></i>Node Tree | BBY Experience Zone - TWO BAY</h4>
            			 </div>
             			<div class="widget-body">
-           				<div id="nodetree" ><?php echo Base::instance()->raw($nodetree); ?></div>
+           				<div id="nodetree" ></div>
        			</div>
        		</div>
             
@@ -1012,6 +1007,9 @@
 	<!-- Vector Maps maps -->
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-us-aea-en.js"></script>
+	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-de-merc-en.js"></script>
+	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-fr-merc-en.js"></script>
+	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-es-merc-en.js"></script>
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-us-lcc-en.js"></script>
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/mall-map.js"></script>
 
@@ -1027,7 +1025,7 @@
 	<script src="/ui/theme/scripts/plugins/charts/flot/jquery.flot.orderBars.js"></script>
 	
 	<!-- Charts Helper Demo Script -->
-	<script src="/ui/theme/scripts/demo/charts.helper.js?1369753443"></script>
+	<script src="/ui/theme/scripts/demo/chart-2.js?1369753443"></script>
 	<!-- Dashboard Demo Script -->
 	<script src="/ui/theme/scripts/demo/index.js?1369753442"></script>
 	

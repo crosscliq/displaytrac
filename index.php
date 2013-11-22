@@ -53,6 +53,16 @@ $f3->set('placements', array_reverse($dash->placements));
 );
 
 
+$f3->route('GET /dav',
+    function($f3) {
+       		
+
+        $view=new View;
+
+        
+        echo $view->render('index-DAV.html');
+    }
+);
 
 
 
@@ -161,7 +171,6 @@ $f3->route('GET /m',
 	function($f3) {
 		session_start();
 		$f3->set('SESSION.id', session_id());
-		echo $f3->get('SESSION.id');
 		$view=new View;
 
 		nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'home');
