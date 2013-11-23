@@ -10,6 +10,18 @@
 
 $(function()
 {
+
+
+	/* slide */
+
+
+ 	 $('.flexslider').flexslider({
+ 		animation: "slide",
+    		animationLoop: false,
+	    	itemWidth: 210,
+	 	itemMargin: 5
+  });
+
 	/* nav slide */
 
 	var cI = 1;

@@ -741,8 +741,8 @@
 	<div class="widget-body">
 		
 		<!-- Gallery Layout -->
-		<div id="placement" class="gallery gallery-2">
-			<ul class="row-fluid" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
+		<div id="placement" class="gallery gallery-2 flexslider">
+			<ul class="row-fluid slides" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
 				<?php foreach ($placements as $placement) : ?>
 				<li class="span3"><a class="thumb" href="<?=$placement['href']?>" data-gallery="gallery"><div class="details"><span class="ellipsis">
 									<span class="white"><?=$placement['address']?></span><br/>
@@ -1034,8 +1034,8 @@
 	 <script src="/ui/arbor/arbor.js" type="text/javascript"></script>
   <script src="/ui/arbor/arbor-tween.js" type="text/javascript"></script>
   <script src="/ui/arbor/arbor-graphics.js" type="text/javascript"></script>
- <script src="/ui/arbor/main.js" type="text/javascript"></script>
-
+  <script src="/ui/arbor/main.js" type="text/javascript"></script>
+  <script src='/ui/theme/scripts/demo/jquery.flexslider-min.js'></script>
  <script type="text/javascript">
   
 

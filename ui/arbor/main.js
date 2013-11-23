@@ -49,16 +49,16 @@
           gfx.line(p1, p2, {stroke:"#b2b19d", width:2, alpha:edge.target.data.alpha})
         })
         sys.eachNode(function(node, pt){
-          var w = Math.max(20, 20+gfx.textWidth(node.name) )
+          var w = Math.max(20, 20+gfx.textWidth(node.data.label) )
           if (node.data.alpha===0) return
           if (node.data.shape=='dot'){
             gfx.oval(pt.x-w/2, pt.y-w/2, w, w, {fill:node.data.color, alpha:node.data.alpha})
-            gfx.text(node.name, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:12})
-            gfx.text(node.name, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:12})
+            gfx.text(node.data.label, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:10})
+            gfx.text(node.data.label, pt.x, pt.y+7, {color:"white", align:"center", font:"Arial", size:10})
           }else{
             gfx.rect(pt.x-w/2, pt.y-8, w, 20, 4, {fill:node.data.color, alpha:node.data.alpha})
-            gfx.text(node.name, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:12})
-            gfx.text(node.name, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:12})
+            gfx.text(node.data.label, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:10})
+            gfx.text(node.data.label, pt.x, pt.y+9, {color:"white", align:"center", font:"Arial", size:10})
           }
         })
       
@@ -141,8 +141,8 @@
             var pos = $(canvas).offset();
             _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
             nearest = sys.nearest(_mouseP);
-
-            //if (!nearest.node) return false
+/*
+            if (!nearest.node) return false
 
             if (nearest.node.data.shape!='dot'){
               selected = (nearest.distance < 50) ? nearest : null
@@ -162,13 +162,13 @@
               dom.removeClass('linkable')
               window.status = ''
             }
-            
+*/          
             return false
           },
-          clicked:function(e){
-            var pos = $(canvas).offset();
-            _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
-            nearest = dragged = sys.nearest(_mouseP);
+         // clicked:function(e){
+          //  var pos = $(canvas).offset();
+          //  _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+          //  nearest = dragged = sys.nearest(_mouseP);
             
            // if (nearest && selected && nearest.node===selected.node){
            //   var link = selected.node.data.link
@@ -178,17 +178,17 @@
             //     window.location = link
            //   }
            //   return false
-            }
+           // }
             
             
-            if (dragged && dragged.node !== null) dragged.node.fixed = true
+         //   if (dragged && dragged.node !== null) dragged.node.fixed = true
 
-            $(canvas).unbind('mousemove', handler.moved);
-            $(canvas).bind('mousemove', handler.dragged)
-            $(window).bind('mouseup', handler.dropped)
+        //    $(canvas).unbind('mousemove', handler.moved);
+         //   $(canvas).bind('mousemove', handler.dragged)
+         //   $(window).bind('mouseup', handler.dropped)
 
-            return false
-          },
+          //  return false
+         // },
           dragged:function(e){
             var old_nearest = nearest && nearest.node._id
             var pos = $(canvas).offset();
@@ -330,7 +330,7 @@
   $(document).ready(function(){
 
 
-    var sys = arbor.ParticleSystem(1000, 600, 0.5) // create the system with sensible repulsion/stiffness/friction
+    var sys = arbor.ParticleSystem(100, 600, 0.5) // create the system with sensible repulsion/stiffness/friction
     sys.parameters({gravity:true}) // use center-gravity to make the graph settle nicely (ymmv)
     sys.renderer = Renderer("#viewport") // our newly created renderer will have its .init() method called shortly by sys...
    
@@ -344,14 +344,15 @@
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
 
-	if (data.type=="node") {
-	
-		var rootNode = sys.addNode(data.name,{'color':data.color,'shape':'dot','label':data.name});
-	} else {
 
-       sys.addEdge('217',data.name)
-
-	}
+	//console.log(data.type + ' id: ' + data.child);
+	//if (data.type=='node') {
+	var rootNode = sys.addNode(data.id,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alone':true});
+	//} else { 
+	//var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name});
+       //sys.addEdge(data.id,data.child)
+	console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
+	//}
 
 
     });

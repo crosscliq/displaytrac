@@ -68,6 +68,18 @@ $f3->route('GET /dav',
 
 
 
+
+$f3->route('GET /form',
+    function($f3) {
+       		
+
+        $view=new View;
+
+        
+        echo $view->render('form.htm');
+    }
+);
+
 $f3->set('UPLOADS','assets/'); // don't forget to set an Upload directory, and make it writable!
 
 $f3->route('POST /upload/image',
@@ -141,6 +153,19 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 
 
 
+$f3->route('POST /controller/input',
+	function($f3) {
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+		$pusher->trigger('game', $f3->get('POST.key'), 'server knows you pressed '. $f3->get('POST.key'));
+		
+	}
+);
+
+
 
 // MOBILE ROUTES BELOW HERE
 
@@ -155,14 +180,12 @@ $f3->route('GET /m',
     $data['name'] = 'Global';
 
 
-		nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'home');
+		nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global');
         
         echo $view->render('m/index.html');
 
 	}
 );
-
-
 $f3->route('POST /ajax/upload',
   function($f3) {
     $data = array();
@@ -319,14 +342,26 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 	}
 );
 
+$f3->route('GET /pusher',
+	function($f3) {
 
+	//event to pusher
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+	$event = 	$pusher->trigger('images', 'addImage', 'posted image named' );
+
+	}
+);
 
 
 $f3->route('GET /m/index2',
 	function($f3) {
     $data = array();
     $data['type'] = 'child';
-    $data['name'] = 'Tracking Form Success';
+    $data['name'] = 'Index 2';
     $data['color'] = 'red';
 		$view=new View;
 
@@ -340,11 +375,11 @@ $f3->route('GET /m/index2',
 
 $f3->route('GET /m/map',
 	function($f3) {
-    $data['type'] = 'child';
+    $data['type'] = 'node';
     $data['name'] = 'Map';
     $data['color'] = 'red';
 		$view=new View;
-		nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'map', $data);
+		nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'map', $data);
         
         echo $view->render('m/map.html');
 
@@ -354,6 +389,10 @@ $f3->route('GET /m/map',
 
 $f3->route('GET /m/global',
 	function($f3) {
+
+session_start();
+                $f3->set('SESSION.id', session_id());
+               
     $data = array();
     $data['type'] = 'node';
     $data['name'] = 'Global';
@@ -368,21 +407,23 @@ $f3->route('GET /m/global',
 );
 
 $f3->route('GET /m/global/@id',
-  function($f3) {
+        function($f3) {
+
+session_start();
+                $f3->set('SESSION.id', session_id());
+
     $data = array();
     $data['type'] = 'node';
-    $data['name'] =  $f3->get('PARAMS.id');
+    $data['name'] = $f3->get('PARAMS.id');
     $data['color'] = 'red';
 
-    $view=new View;
-    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
-        
+                $view=new View;
+                nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
+
         echo $view->render('m/globalTrac.html');
 
-  }
+        }
 );
-
-
 
 $f3->route('GET /m/samsung_55F7000',
   function($f3) {
