@@ -357,7 +357,7 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 );
 
 
-$f3->route('GET /m/index2',
+$f3->route('GET|POST /m/index2',
 	function($f3) {
     $data = array();
     $data['type'] = 'child';

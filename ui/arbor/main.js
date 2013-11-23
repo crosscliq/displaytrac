@@ -162,7 +162,7 @@
               dom.removeClass('linkable')
               window.status = ''
             }
-*/          
+*/
             return false
           },
          // clicked:function(e){
@@ -340,19 +340,23 @@
     $(sys.renderer).bind('navigate', nav.navigate)
     $(nav).bind('mode', sys.renderer.switchMode)
     nav.init()
+      	sys.addEdge('1','2');
 
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
 
 
 	//console.log(data.type + ' id: ' + data.child);
-	//if (data.type=='node') {
-	var rootNode = sys.addNode(data.id,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alone':true});
-	//} else { 
-	//var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name});
-       //sys.addEdge(data.id,data.child)
-	console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
-	//}
+	if (data.type=='node') {
+		var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alpha':'1','link':'1'});
+		console.log(rootNode);
+	} else { 
+		var childNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name,'alpha':'1','link':'1'});
+		console.log(childNode);
+       	sys.addEdge(data.id,data.child)
+	//console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
+		
+	}
 
 
     });
