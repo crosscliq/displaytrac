@@ -146,7 +146,7 @@ $f3->route('POST /ajax/upload',
     $data['name'] = 'Uploaded Proof Image';
     $data['color'] = 'green';
 
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'index2', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'imageuploaded', $data);
        //get the file that we uploaded
       $file = $_FILES['uploader'];
 
@@ -228,7 +228,7 @@ $f3->route('GET|POST /m/index2',
     $data['color'] = 'green';
 		$view=new View;
 
-        nodePusher($f3->get('SESSION.id').'imageupload', $f3->get('SESSION.id').'index2', $data);
+        nodePusher($f3->get('SESSION.id').'imageuploaded', $f3->get('SESSION.id').'index2', $data);
         
         echo $view->render('m/index2.html');
 
