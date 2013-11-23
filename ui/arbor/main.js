@@ -306,7 +306,7 @@
             $(this).hide()
             $(that).trigger({type:'mode', mode:'visible', dt:dt})
           })
-          document.title = "arbor.js"
+//          document.title = "arbor.js"
           break
           
           case 'introduction':
@@ -318,7 +318,7 @@
                     
           $('#docs').find(">div").hide()
           $('#docs').find('#'+_path).show()
-          document.title = "arbor.js » " + _path
+       //   document.title = "arbor.js » " + _path
           break
         }
         
