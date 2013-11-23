@@ -36,7 +36,7 @@
         }
       },
       resize:function(){
-        canvas.width = 340;
+        canvas.width = 640;
         canvas.height = 230;
         sys.screen({size:{width:canvas.width, height:canvas.height}})
         _vignette = null
@@ -141,14 +141,14 @@
             var pos = $(canvas).offset();
             _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
             nearest = sys.nearest(_mouseP);
-/*
+
             if (!nearest.node) return false
 
             if (nearest.node.data.shape!='dot'){
               selected = (nearest.distance < 50) ? nearest : null
               if (selected){
                  dom.addClass('linkable')
-                 //window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'')
+                 window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'')
               }
               else{
                  dom.removeClass('linkable')
@@ -162,33 +162,33 @@
               dom.removeClass('linkable')
               window.status = ''
             }
-*/
+
             return false
           },
-         // clicked:function(e){
-          //  var pos = $(canvas).offset();
-          //  _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
-          //  nearest = dragged = sys.nearest(_mouseP);
+         clicked:function(e){
+            var pos = $(canvas).offset();
+            _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
+           nearest = dragged = sys.nearest(_mouseP);
             
-           // if (nearest && selected && nearest.node===selected.node){
-           //   var link = selected.node.data.link
-            //  if (link.match(/^#/)){
-            //     $(that).trigger({type:"navigate", path:link.substr(1)})
-           //   }else{
-            //     window.location = link
-           //   }
-           //   return false
-           // }
+            if (nearest && selected && nearest.node===selected.node){
+             var link = selected.node.data.link
+              if (link.match(/^#/)){
+                $(that).trigger({type:"navigate", path:link.substr(1)})
+              }else{
+               window.location = link
+             }
+              return false
+            }
             
             
-         //   if (dragged && dragged.node !== null) dragged.node.fixed = true
+          if (dragged && dragged.node !== null) dragged.node.fixed = true
 
-        //    $(canvas).unbind('mousemove', handler.moved);
-         //   $(canvas).bind('mousemove', handler.dragged)
-         //   $(window).bind('mouseup', handler.dropped)
+            $(canvas).unbind('mousemove', handler.moved);
+            $(canvas).bind('mousemove', handler.dragged)
+            $(window).bind('mouseup', handler.dropped)
 
-          //  return false
-         // },
+           return false
+          },
           dragged:function(e){
             var old_nearest = nearest && nearest.node._id
             var pos = $(canvas).offset();
@@ -348,10 +348,10 @@
 
   //console.log(data.type + ' id: ' + data.child);
   if (data.type=='node') {
-    var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alpha':'1','link':'1'});
+    var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alpha':'1','link':data.link});
     console.log(rootNode);
   } else { 
-    var childNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name,'alpha':'1','link':'1'});
+    var childNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name,'alpha':'1','link':data.link});
     console.log(childNode);
         sys.addEdge(data.id,data.child)
   //console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
