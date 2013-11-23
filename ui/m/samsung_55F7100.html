@@ -121,7 +121,10 @@ function error() {
         </div>
         
         <!-- contact form starts -->
-        <form action="index2.html" method="get" class="contactForm" style="clear:both;" role="form">
+        <form action="/asset/update" method="post" class="contactForm" style="clear:both;" role="form">
+          <input type="hidden" name="assetName" value="Samsung 55F7100" />
+          <input type="hidden" name="asset" value="samsung_55F7100" />
+        
           <h2>Convergence Side of Display</h2>
           <div class="form-group">
             <label>Is the 60F8000 TV available and working properly?</label>
@@ -344,9 +347,9 @@ function error() {
               </div>
             </div>
           </div>
-          <div style="float:left; padding:10px;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" onClick="window.location.href='index2.html'">
+          <div style="float:left; padding:10px;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" >
           </div>
-           <div style="float:right; padding:10px;"> <input type="submit" class="buttonWrapper contactSupportButton" id="contactSupportButton" value="Request Support" data-formId="contactForm" onClick="window.location.href='index2.html'">
+           <div style="float:right; padding:10px;"> <input type="submit" class="buttonWrapper contactSupportButton" id="contactSupportButton" value="Request Support" data-formId="contactForm" >
           </div>
         </form>
         <!-- contact form ends --> 

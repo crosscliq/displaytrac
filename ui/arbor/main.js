@@ -36,7 +36,7 @@
         }
       },
       resize:function(){
-        canvas.width = 620;
+        canvas.width = 340;
         canvas.height = 230;
         sys.screen({size:{width:canvas.width, height:canvas.height}})
         _vignette = null
@@ -340,44 +340,29 @@
     $(sys.renderer).bind('navigate', nav.navigate)
     $(nav).bind('mode', sys.renderer.switchMode)
     nav.init()
-      	sys.addEdge('1','2');
+        sys.addEdge('1','2');
 
      var nodesChannel = pusher.subscribe('nodes');
     nodesChannel.bind('addnode', function(data) {
 
 
-	//console.log(data.type + ' id: ' + data.child);
-	if (data.type=='node') {
-		var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alpha':'1','link':'1'});
-		console.log(rootNode);
-	} else { 
-		var childNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name,'alpha':'1','link':'1'});
-		console.log(childNode);
-       	sys.addEdge(data.id,data.child)
-	//console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
-		
-	}
+  //console.log(data.type + ' id: ' + data.child);
+  if (data.type=='node') {
+    var rootNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'shape':'dot','label':data.name,'alpha':'1','link':'1'});
+    console.log(rootNode);
+  } else { 
+    var childNode = sys.addNode(data.child,{'id':data.child,'color':data.color,'label':data.name,'alpha':'1','link':'1'});
+    console.log(childNode);
+        sys.addEdge(data.id,data.child)
+  //console.log('connect: ' + data.child + ' ( child ) to id: ' + data.id + ' ( parent )' );
+    
+  }
 
 
     });
 
 
-    //sys.addNode('f', {alone:true, mass:.25})
-
-    // or, equivalently:
-    //
-    // sys.graft({
-    //   nodes:{
-    //     f:{alone:true, mass:.25}
-    //   }, 
-    //   edges:{
-    //     a:{ b:{},
-    //         c:{},
-    //         d:{},
-    //         e:{}
-    //     }
-    //   }
-    // })
+  
     
   })
 

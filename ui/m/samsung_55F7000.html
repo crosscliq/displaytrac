@@ -83,7 +83,7 @@ function error() {
 
     <!-- header wrapper starts -->
     <div class="headerOuterWrapper">
-      <div class="headerWrapper"> <a class="mainLogo" href="index.html"><img src="/ui/m/images/common/samsungLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a> </div>
+      <div class="headerWrapper"> <a class="mainLogo" href="/m/global"><img src="/ui/m/images/common/samsungLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a> </div>
 
       <!-- main menu wrapper starts -->
       <ul class="mainMenuWrapper">
@@ -118,7 +118,9 @@ function error() {
         </div>
        
         <!-- contact form starts -->
-        <form action="index2.html" method="get" class="contactForm" style="clear:both;" role="form">
+        <form action="/asset/update" method="post" class="contactForm" style="clear:both;" role="form">
+          <input type="hidden" name="assetName" value="Samsung 55F7000" />
+          <input type="hidden" name="asset" value="samsung_55F7000" />
           <div class="form-group">
             <label>Is the 55F7100 TV available and working properly?</label>
             <div class="radio">
@@ -164,7 +166,7 @@ function error() {
             </div>
          
           </div>
-             <div style="float:left;display:inline-block;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" onClick="window.location.href='index2.html'">
+             <div style="float:left;display:inline-block;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" >
                   
                   <div style="display:inline-block;height:36px;width:120px; margin-left: 35px;">
                   <input type="submit" id="uploadbtn" style="height:36px!important; background:#333;height:40px;" value="Upload Photo">
@@ -176,7 +178,7 @@ function error() {
                   </div>
                   <!-- contact form wrapper ends --> 
                   
-                <input type="submit" class="" id="contactSupportButton" value="Request Support" data-formId="contactForm" onClick="window.location.href='index2.html'" style="position:relative; border-radius:5px; height:36px; margin:14px auto; text-align:center!important;width:94%;float:none!important; ">
+                <input type="submit" class="" id="contactSupportButton" value="Request Support" data-formId="contactForm"  style="position:relative; border-radius:5px; height:36px; margin:14px auto; text-align:center!important;width:94%;float:none!important; ">
             
     <!-- page wrapper ends --> 
 
