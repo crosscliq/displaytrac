@@ -736,18 +736,20 @@
 	
 </div>
 
-<div class="widget widget-gallery widget-gallery-slide margin-bottom-none" data-toggle="collapse-widget">
+<div class="widget margin-bottom-none" data-toggle="collapse-widget">
 	<div class="widget-head"><h4 class="heading">Proof of Placement | BBY Experience Zone - TWO BAY</h4></div>
 	<div class="widget-body">
 		
 		<!-- Gallery Layout -->
 		<div id="placement" class="gallery gallery-2 flexslider">
-			<ul class="row-fluid slides" data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
+			<ul class="row-fluid " data-toggle="modal-gallery" data-target="#modal-gallery" id="gallery-4" data-delegate="#gallery-4">
 				<?php foreach ($placements as $placement) : ?>
 				<li class="span3"><a class="thumb" href="<?=$placement['href']?>" data-gallery="gallery"><div class="details"><span class="ellipsis">
 									<span class="white"><?=$placement['address']?></span><br/>
 									<span class="meta glyphicons calendar single"><i></i> on <?=$placement['time']?> <span>1 hour ago</span></span>
-								</span></div><img src="<?=$placement['img']?>" alt="photo" /></a></li>
+								</span></div>
+							
+								<img src="/thumbs/<?=$placement['img']?>/300/200" alt="photo" /></a></li>
 				<?php endforeach; ?>
 
 								
@@ -757,9 +759,7 @@
 		</div>
 		<!-- // Gallery Layout END -->
 		
-		<span class="nav nav-left disabled glyphicons standard left_arrow"><i></i></span>
-		<span href="" class="nav nav-right glyphicons standard right_arrow"><i></i></span>
-		
+			
 	</div>
 </div>
 

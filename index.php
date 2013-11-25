@@ -210,7 +210,18 @@ $pusher = new Pusher( $app_key, $app_secret, $app_id );
 
 
 
+$f3->route('GET /thumbs/assets/@image/@width/@height',
+    function($f3) {
 
+$web = \Web::instance();
+    $mime = 'image/jpeg';
+   //header('Content-Type: '.$mime);   
+$img = new Image($f3->get('PARAMS.image'), false, 'assets/');
+
+$img->resize( 300, 200, true);
+$img->render(); 
+    }
+);
 
 
 
@@ -326,7 +337,7 @@ $f3->route('GET /m/global/@id/samsung_HWF750',
     $data['name'] = 'Samsung GTN8013';
     $data['color'] = 'red';
     $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_HWF750';
-        $f3->set('id',$f3->get('PARAMS.id'));
+    $f3->set('id',$f3->get('PARAMS.id'));
     $view=new View;
     nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_HWF750',$data  );
         
