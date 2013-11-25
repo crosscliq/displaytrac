@@ -10,7 +10,7 @@
   <!-- meta tags end -->
 
   <!-- favorite icon starts -->
-  <link rel="shortcut icon" href="/ui/m/images/common/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
   <!-- favorite icon ends -->
 
   <!-- Google fonts start -->
@@ -19,27 +19,27 @@
 
   <!-- CSS files start -->
   <!-- custom bootstrap includes forms, grid, tables, buttons -->
-  <link href="/ui/m/css/bootstrap/bootstrap.min.css" type="text/css" media="all" rel="stylesheet" />
-  <link href="/ui/m/css/framework.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="/ui/m/css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="/ui/m/css/elements.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="/ui/m/css/style.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="/ui/m/css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
-  <link href="/ui/m/css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
-  <link href="/ui/m/css/skin.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/bootstrap/bootstrap.min.css" type="text/css" media="all" rel="stylesheet" />
+  <link href="css/framework.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/elements.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
+  <link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
 
-  <link href="/ui/m/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
   <!-- CSS files end -->
 
   <!-- JavaScript files start -->
-  <script type="text/javascript" src="/ui/m/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/ui/m/js/effects.jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/ui/m/js/jquery.nivo-slider.min.js"></script>
-  <script type="text/javascript" src="/ui/m/js/jquery.colorbox.min.js"></script>
-  <script type="text/javascript" src="/ui/m/js/contact.js"></script>
-  <script type="text/javascript" src="/ui/m/js/custom.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
+  <script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+  <script type="text/javascript" src="js/contact.js"></script>
+  <script type="text/javascript" src="js/custom.js"></script>
   <!-- JavaScript files end -->
-  <script src="/ui/m/js/show-hide.js" type="text/javascript"></script>
+  <script src="js/show-hide.js" type="text/javascript"></script>
   <script type="text/javascript">
 
   $(document).ready( function () {
@@ -83,7 +83,7 @@ function error() {
 
     <!-- header wrapper starts -->
     <div class="headerOuterWrapper">
-      <div class="headerWrapper"> <a class="mainLogo" href="/m/global"><img src="/ui/m/images/common/mainLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a> </div>
+      <div class="headerWrapper"> <a class="mainLogo" href="index.html"><img src="images/common/samsungLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a> </div>
 
       <!-- main menu wrapper starts -->
       <ul class="mainMenuWrapper">
@@ -98,7 +98,7 @@ function error() {
     <!-- header wrapper ends --> 
 
     <!-- notification starts -->
-    <p class="topNotification">Nimbus Tag# 3sadfer323rrse233<br>Current Date: 4/12/14<br>Current Location: 232424 - 123243<a href="" class="notificationButton"></a></span></p>
+    <p class="topNotification">Nimbus Tag# 3sadfer323rrse233<br>Current Date: 4/12/14<br>Current Location: Best Buy - 2100 S Chesnut Street, Boston MA3<a href="" class="notificationButton"></a></span></p>
     <!-- notification ends --> 
 
     <!-- page wrapper starts -->
@@ -112,16 +112,13 @@ function error() {
         <h4 class="contactTitle2">Initial Display Installation - AssetTrac</h4>
 
         <div>
-          <img src="/ui/m/images/55inch.jpg" style="float:left; max-width:30%; padding-right:0px; border: 1px grey solid; border-radius:3px; margin-right:10px; margin-bottom:15px;">
+          <img src="images/55inch.jpg" style="float:left; max-width:30%; padding-right:0px; border: 1px grey solid; border-radius:3px; margin-right:10px; margin-bottom:15px;">
           <h5 style="margin-bottom:6px;">Display ID 18193</h5>
           <p>Instructions: Please refer to the enclosed instructions regarding intallation procedures. This kiosk requires 120v power supply and must be placed away from any potential fire hazard.<br>Please update your status and upload photo of installation.</p>
         </div>
        
         <!-- contact form starts -->
-        <form action="/asset/update" method="post" class="contactForm" style="clear:both;" role="form">
-          <input type="hidden" name="assetName" value="Samsung 55F7000" />
-          <input type="hidden" name="asset" value="samsung_55F7000" />
-          <input type="hidden" name="id" value="<?php echo $id; ?>" />
+        <form action="index2.html" method="get" class="contactForm" style="clear:both;" role="form">
           <div class="form-group">
             <label>Is the 55F7100 TV available and working properly?</label>
             <div class="radio">
@@ -167,7 +164,7 @@ function error() {
             </div>
          
           </div>
-             <div style="float:left;display:inline-block;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" >
+             <div style="float:left;display:inline-block;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" onClick="window.location.href='index2.html'">
                   
                   <div style="display:inline-block;height:36px;width:120px; margin-left: 35px;">
                   <input type="submit" id="uploadbtn" style="height:36px!important; background:#333;height:40px;" value="Upload Photo">
@@ -179,7 +176,7 @@ function error() {
                   </div>
                   <!-- contact form wrapper ends --> 
                   
-                <input type="submit" class="" id="contactSupportButton" value="Request Support" data-formId="contactForm"  style="position:relative; border-radius:5px; height:36px; margin:14px auto; text-align:center!important;width:94%;float:none!important; ">
+                <input type="submit" class="" id="contactSupportButton" value="Request Support" data-formId="contactForm" onClick="window.location.href='index2.html'" style="position:relative; border-radius:5px; height:36px; margin:14px auto; text-align:center!important;width:94%;float:none!important; ">
             
     <!-- page wrapper ends --> 
 
