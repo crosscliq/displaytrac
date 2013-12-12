@@ -1,0 +1,36 @@
+<script src="http://js.pusher.com/2.1/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('f3b8b0aeaf31c105168e');
+    
+
+   
+
+
+    var imagesChannel = pusher.subscribe('images');
+    imagesChannel.bind('addimage', function(data) {
+     
+      count = $("#gallery-4").children().length;
+      console.log(count + ' list images ');
+      if(count >= 4) {
+        $('#gallery-4 li:last').remove();
+      }
+
+      var html ='';
+      html = '<li id="'+data.id+'" class="span3 active"><a class="thumb" href="'+data.href+'" data-gallery="gallery"><div class="details"><span class="ellipsis"><span class="white">'+data.address+'</span><br/><span class="meta glyphicons calendar single"><i></i> on '+data.time+' <span>1 hour ago</span></span></span></div><img src="/thumbs/'+data.img+'/300/200" alt="photo" /></a></li>'
+
+      $("#gallery-4").prepend(html);
+      
+
+      setTimeout(function() {  $('#'+data.id).removeClass('active'); }, 5000);
+
+    });
+
+
+  </script>

@@ -1,0 +1,62 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////// Custom CSS Rules Start                                                                             */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.contactFormWrapper input[type="radio"] {
+	-webkit-appearance: radio;
+	-moz-appearance: radio;
+	width: auto;
+	display: inline-block;
+}
+
+.contactFormWrapper label {
+	height: auto;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.form-group .form-group.child {
+	display: none;
+}
+ .child {
+	display: none;
+}
+.accord-btn {
+	background:#4baad3;
+	font-size: 17px;
+	padding-top: 8px;
+	margin-bottom: 8px;
+	padding: 8px;
+	margin: 0px auto;
+	width: 100%;
+}
+.unchecked { 
+	opacity:0.6;
+}
+.accord-yes {
+	display:block;
+	height:16px;
+	width:16px;
+	float:right;
+	margin-right:20px;
+	background:url(../images/icons/smallIcons/16/1/iconCheckmarkBg16.png) no-repeat;
+}
+.accord-no {
+	display:block;
+	height:16px;
+	width:16px;
+	float:right;
+	margin-right:20px;
+	background:url(../images/icons/smallIcons/16/1/iconNoBg16.png) no-repeat;
+}
+.accord-contents {
+	display: none;
+	padding:10px;
+}
+textarea {
+	width: 100%;
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*//////////////////// Custom CSS Rules End                                                                               */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cliqtraq</title>
+<!-- meta tags start -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="eplie, premium, mobile, template, HTML, Css" />
+<meta name="Description" content="Premium mobile HTML/CSS template." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- meta tags end -->
+
+<!-- favorite icon starts -->
+<link rel="shortcut icon" href="/ui/m/images/common/favicon.ico" type="image/x-icon" />
+<!-- favorite icon ends -->
+
+<!-- Google fonts start -->
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+<!-- Google fonts end -->
+
+<!-- CSS files start -->
+<link href="/ui/m/css/framework.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/ui/m/css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/ui/m/css/elements.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/ui/m/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/ui/m/css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/ui/m/css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/ui/m/css/skin.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/ui/m/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+<!-- CSS files end -->
+
+<!-- JavaScript files start -->
+<script type="text/javascript" src="/ui/m/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ui/m/js/effects.jquery-ui.min.js"></script>
+<script type="text/javascript" src="/ui/m/js/jquery.nivo-slider.min.js"></script>
+<script type="text/javascript" src="/ui/m/js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="/ui/m/js/contact.js"></script>
+<script type="text/javascript" src="/ui/m/js/custom.js"></script>
+<!-- JavaScript files end -->
+
+<script type="text/javascript">
+
+$(document).ready( function () {
+
+
+	$('#uploadbtn').click( function (e) {
+	
+		e.preventDefault();
+		$('#uploader').click();
+
+	});
+
+});
+
+$(window).load( function () { 
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+} else {
+ // error('not supported');
+}
+
+	function success() {
+
+	console.log('location found');
+
+	}
+
+	function error() {
+
+	console.log('location not found');
+
+	}
+
+});
+</script>
+</head>
+<body>
+<!-- website wrapper starts -->
+<div class="websiteWrapper"> 
+  
+  <!-- header wrapper starts -->
+  <div class="headerOuterWrapper">
+    <div class="headerWrapper"> <a class="mainLogo" href="/m"><img src="/ui/m/images/common/mainLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a> </div>
+    
+    <!-- main menu wrapper starts -->
+    <ul class="mainMenuWrapper">
+      <li><a href="/m">Home</a></li>
+      <li><a href="/m/index2">Tag History</a></li>
+      <li><a href="/m/map">Map</a></li>
+    </ul>
+    <!-- main menu wrapper ends --> 
+    
+  </div>
+  <!-- header wrapper ends --> 
+  
+  <!-- notification starts -->
+  <p class="topNotification">Nimbus Tag# 3sadfer323rrse233<br>Current Date: 4/12/14<br>Current Location: 232424 - 123243<a href="" class="notificationButton"></a></span></p>
+  <!-- notification ends --> 
+  
+  <!-- page wrapper starts -->
+  <div class="pageWrapper contactPageWrapper"> 
+   
+    
+    <!-- contact form wrapper starts -->
+    <div class="contactFormWrapper">
+
+      <h4 class="contactTitle">Job: SG-653223</h4>
+      <h4 class="contactTitle2">Samsung Galaxy Note 4 - BestBuy Kiosk</h4>
+      <!-- form success message wrapper starts -->
+      <div class="formSuccessMessageWrapper" id="formSuccessMessageWrapper">
+        <h4>Status Updated!</h4>
+        <p>Thanks!</p>
+      </div>
+      <!-- form success message wrapper ends --> 
+      <!-- contact form starts -->
+      <form action="/m/index2" method="post" enctype="multipart/form-data" class="contactForm" style="clear:both;">
+        <fieldset>
+          <div class="formFieldWrapper">
+      <img src="/ui/m/images/samsung.png" style="float:left; max-width:30%; padding-right:0px; border: 1px grey solid; border-radius:3px; margin-right:10px; margin-bottom:15px;">
+      <h5 style="margin-bottom:6px;">Display ID 18193</h5>
+ 		 <p>Instructions: Please refer to the enclosed instructions regarding intallation procedures. This kiosk requires 120v power supply and must be placed away from any potential fire hazard.<br>Please update your status and upload photo of installation.</p>
+            <label for="contactNameField">Select Status:</label>
+            <select data-dummy=""/>
+				<option>Warehouse</option>
+				<option>Shipping</option>
+				<option>Delivered</option>
+				<option>Installed</option>
+			</select>
+          </div>
+          
+
+          <div class="formTextareaWrapper">
+            <label for="contactMessageTextarea">Notes:</label>
+            <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea" data-dummy=""></textarea><br/>
+
+
+            <input type="submit" id="uploadbtn" style="width:40%; padding:5 15 5 15; background:#333;height:40px;" value="Upload Photo">
+            <input type="file" name="image" id="uploader" style="opacity:0;z-index:-999;">
+       
+          </div>
+          <div>
+  <div style="width:120px; float:left; padding:10px;"> <input type="submit" class="buttonWrapper contactSupportButton" id="contactSupportButton" value="Request Support" data-formId="contactForm" onClick="window.location.href='/m/index2'">
+          </div>
+          
+          
+  <div style="float:right; width:120px; padding:10px;"> <input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Update Status" data-formId="contactForm" >
+          
+</div>
+ </div>
+          <div class="formSubmitButtonErrorsWrapper"> 
+            <!-- form errors start --> 
+            <span class="formValidationError" id="contactNameFieldError">Please enter your name.</span> <span class="formValidationError" id="contactEmailFieldError">Please enter your email address.</span> <span class="formValidationError" id="contactEmailFieldError2">Please enter a valid email address.</span> 
+            <span class="formValidationError" id="contactMessageTextareaError">Please enter your message.</span> 
+            <!-- form errors end -->
+                      </div>
+          <input type="hidden" name="formIsReady" value="true"  id="formIsReady" />
+        </fieldset>
+
+
+ 
+      </form>
+      <!-- contact form ends --> 
+    </div>
+    <!-- contact form wrapper ends --> 
+    
+  </div>
+  <!-- page wrapper ends --> 
+  
+  <!-- footer wrapper starts -->
+  <div class="footerWrapper"> 
+    <!-- copyright wrapper starts -->
+    <div class="copyrightWrapper"> 
+      <!-- copyright starts --> 
+      <span class="copyright">&copy; copyright Rapid Displays.</span> 
+      <!-- copyright ends --> 
+      <!-- back to top btn starts --> 
+      <a href="" class="backToTopButton"></a> 
+      <!-- back to top btn ends --> 
+    </div>
+    <!-- copyright wrapper ends --> 
+  </div>
+  <!-- footer wrapper ends --> 
+  
+</div>
+<!-- website wrapper ends -->
+</body>
+</html>

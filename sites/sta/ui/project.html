@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie gt-ie8"> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+	<title>RapidTrac (v1.2)</title>
+	
+	<!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- Bootstrap -->
+	<link href="/ui/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="/ui/bootstrap/css/responsive.css" rel="stylesheet" />
+	
+	<!-- Glyphicons Font Icons -->
+	<link href="/ui/theme/css/glyphicons.css" rel="stylesheet" />
+	
+	<!-- Uniform Pretty Checkboxes -->
+	<link href="/ui/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+	
+	<!--[if IE]><!--><script src="/ui/theme/scripts/plugins/other/excanvas/excanvas.js"></script><!--<![endif]-->
+	<!--[if lt IE 8]><script src="/ui/theme/scripts/plugins/other/json2.js"></script><![endif]-->
+	
+	<!-- Bootstrap Extended -->
+	<link href="/ui/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="/ui/bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="/ui/bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+	<link href="/ui/bootstrap/extend/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+	<link href="/ui/bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" rel="stylesheet" />
+	
+	<!-- Select2 Plugin -->
+	<link href="/ui/theme/scripts/plugins/forms/select2/select2.css" rel="stylesheet" />
+	
+	<!-- DateTimePicker Plugin -->
+	<link href="/ui/theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+	
+	<!-- JQueryUI -->
+	<link href="/ui/theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+	
+	<!-- MiniColors ColorPicker Plugin -->
+	<link href="/ui/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+	
+	<!-- Notyfy Notifications Plugin -->
+	<link href="/ui/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css" rel="stylesheet" />
+	<link href="/ui/theme/scripts/plugins/notifications/notyfy/themes/default.css" rel="stylesheet" />
+	
+	<!-- Gritter Notifications Plugin -->
+	<link href="/ui/theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css" rel="stylesheet" />
+	
+	<!-- Easy-pie Plugin -->
+	<link href="/ui/theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css" rel="stylesheet" />
+
+	<!-- Google Code Prettify Plugin -->
+	<link href="/ui/theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+
+	<!-- Bootstrap Image Gallery -->
+	<link href="/ui/bootstrap/extend/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css" rel="stylesheet" />
+	
+	<!-- Main Theme Stylesheet :: CSS -->
+	<link href="/ui/theme/css/style-dark.css?1369753442" rel="stylesheet" />
+	
+	
+	<!-- LESS.js Library -->
+	<script src="/ui/theme/scripts/plugins/system/less.min.js"></script>
+
+	 <?php include('ui/pusher.htm'); ?>
+
+</head>
+<body class="">
+	
+		<!-- Main Container Fluid -->
+	<div class="container-fluid fluid menu-left">
+		
+		<!-- Top navbar (note: add class "navbar-hidden" to close the navbar by default) -->
+		<div class="navbar main hidden-print">
+		
+			<!-- Wrapper -->
+			<div class="wrapper">
+			
+							
+								<!-- Menu Toggle Button -->
+				<button type="button" class="btn btn-navbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<!-- // Menu Toggle Button END -->
+								
+
+								
+				<!-- Top Menu Right -->
+				<ul class="topnav pull-right">
+				
+
+				
+					<!-- Dropdown -->
+					<li class="dropdown dd-1 visible-desktop">
+						<a href="" data-toggle="dropdown" class="glyphicons shield"><i></i>Get Help <span class="caret"></span></a>
+						<ul class="dropdown-menu pull-right">
+							
+							<li class="dropdown submenu">
+	                    		<a href="#" class="dropdown-toggle glyphicons bell" data-toggle="dropdown"><i></i>Level 2</a>
+								<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+			                        <li class="dropdown submenu">
+			                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.1</a>
+										<ul class="dropdown-menu submenu-show submenu-hide pull-left">
+											<li><a href="#">Level 2.1.1</a></li>
+	                                    	<li><a href="#">Level 2.1.2</a></li>
+	                                    	<li><a href="#">Level 2.1.3</a></li>
+	                                    	<li><a href="#">Level 2.1.4</a></li>
+			                            </ul>
+			                        </li>
+			                        <li class="dropdown submenu">
+			                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2.2</a>
+			                            <ul class="dropdown-menu submenu-show submenu-hide pull-left">
+											<li><a href="#">Level 2.2.1</a></li>
+			                                <li><a href="#">Level 2.2.2</a></li>
+			                            </ul>
+			                        </li>
+			                    </ul>
+			                </li>
+			                
+			                <li><a href="" class="glyphicons settings"><i></i>Some option</a></li>
+							<li><a href="" class="glyphicons bell"><i></i>Some other option</a></li>
+							<li><a href="" class="glyphicons bell"><i></i>Other option</a></li>
+			                
+						</ul>
+					</li>
+					<!-- // Dropdown END -->
+					
+					<!-- Profile / Logout menu -->
+					<li class="account dropdown dd-1">
+												<a data-toggle="dropdown" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons logout lock"><span class="hidden-phone">Logout</span><i></i></a>
+						<ul class="dropdown-menu pull-right">
+							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons cogwheel">Settings<i></i></a></li>
+							<li><a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="glyphicons camera">My Photos<i></i></a></li>
+							<li class="profile">
+								<span>
+									<span class="heading">Profile <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="pull-right">edit</a></span>
+									<span class="img"></span>
+									<span class="details">
+										<a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">RapidTrac</a>
+										contact@crosscliq.com
+									</span>
+									<span class="clearfix"></span>
+								</span>
+							</li>
+							<li>
+								<span>
+									<a class="btn btn-default btn-mini pull-right" href="login.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Sign Out</a>
+								</span>
+							</li>
+						</ul>
+											</li>
+					<!-- // Profile / Logout menu END -->
+					
+				</ul>
+				<!-- // Top Menu Right END -->
+				
+								
+				<div class="clearfix"></div>
+			</div>
+			<!-- // Wrapper END -->
+			
+			<span class="toggle-navbar"></span>
+		</div>
+		<!-- Top navbar END -->
+		
+				<!-- Sidebar menu & content wrapper -->
+		<div id="wrapper">
+		
+		<!-- Sidebar Menu -->
+		<div id="menu" class="hidden-phone hidden-print">
+		
+			<!-- Brand -->
+			<a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark" class="appbrand">RapidTrac <span>(v1.2)</span></a>
+		
+			<!-- Scrollable menu wrapper with Maximum height -->
+			<div class="slim-scroll" data-scroll-height="800px">
+			
+			<!-- Sidebar Profile -->
+			<span class="profile">
+				<p>Welcome <a href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark">Michael Pepe</a></p>
+				<a class="img" href="my_account.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark"><img src="/ui/theme/images/avatar-style-dark.jpg" alt="Avatar" /></a>
+				<span>
+					<ul>
+						<li><a href="" class="glyphicons lock"><i></i>Account</a></li>
+						<li><a href="" class="glyphicons keys"><i></i>Password</a></li>
+						<li><a href="" class="glyphicons eject"><i></i>Logout</a></li>
+					</ul>
+				</span>
+			</span>
+			<!-- // Sidebar Profile END -->
+			
+			<!-- Regular Size Menu -->
+			<ul class="menu-0">
+			
+								
+								<!-- Menu Regular Item -->
+				<li class="glyphicons display active"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark, background-color:blue;" data-toggle="collapse"><i></i><span>FILTERS</span></a></li>
+                <!-- sub menu -->
+                <ul class="menu-1">
+                    <li class="hasSubmenu active">
+                        <a class="" href="#menu-recent-stats" data-toggle="collapse"><i></i><span>PRODUCT GROUPS</span></a>
+                        <ul class="collapse in" id="menu-recent-stats">
+                            <li><a class="" href="#"><i></i><span>DAV</span></a></li>
+                            <li><a class="" href="#"><i></i><span>DI</span></a></li>
+                            <li><a class="" href="#"><i></i><span>GALAXY</span></a></li>
+                            <li><a class="" href="#"><i></i><span>HOME APPLIANCE</span></a></li>
+                            <li><a class="menuactive" href="#"><i></i><span>TV</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- sub menu end -->
+                <!-- sub menu -->
+                <ul class="menu-1">
+                    <li class="hasSubmenu active">
+                        <a class="" href="#menu-recent-stats" data-toggle="collapse"><i></i><span>PROGRAMS</span></a>
+                        <ul class="collapse in" id="menu-recent-stats">
+                            <li><a class="menuactive" href="#"><i></i><span>Experience Zone</span></a></li>
+                            <li><a class="" href="#"><i></i><span>UHD Endcap</span></a></li>
+                            <li><a class="" href="#"><i></i><span>N-Screen</span></a></li>
+                            <li><a class="" href="#"><i></i><span>Galaxy Smash Table</span></a></li>
+                            <li><a class="" href="/dav"><i></i><span>DAV Multi-Room</span></a></li>
+                            <li><a class="" href="#"><i></i><span>Velocity Endcap</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- sub menu end -->
+                <li class="glyphicons display active"><a href="index.html?lang=en&amp;layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark, background-color:blue;" data-toggle="collapse"><i></i><span>Program Center</span></a></li>
+                <div class="separator bottom"></div>
+                <!-- Sidebar Stats Widgets -->
+                <div class="widget-sidebar-stats">
+                    <strong>29</strong>
+                    <span>Programs</span>
+                    <span class="pull-right sparkline"></span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget-sidebar-stats">
+                    <strong>31,416</strong>
+                    <span>Displays</span>
+                    <span class="pull-right sparkline"></span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget-sidebar-stats">
+                    <strong>73,662</strong>
+                    <span>Assets</span>
+                    <span class="pull-right sparkline"></span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="separator bottom"></div>
+                <!-- // Sidebar Stats Widgets END -->
+				
+				
+								
+			</ul>
+			<div class="clearfix"></div>
+			<!-- // Regular Size Menu END -->
+			
+			
+			<div class="clearfix"></div>
+			<div class="separator bottom"></div>
+			
+						
+			
+			<!-- Stats Widget -->
+			<a href="" class="widget-stats widget-stats-2 widget-stats-easy-pie widget-sidebar-stats txt-single">
+				<div data-percent="90" class="easy-pie primary"><span class="value">90</span>%</div>
+				<span class="txt">Completed tasks</span>
+				<div class="clearfix"></div>
+			</a>
+			<!-- // Stats Widget END -->
+			
+									
+						
+						
+			</div>
+			<!-- // Scrollable Menu wrapper with Maximum Height END -->
+			
+		</div>
+		<!-- // Sidebar Menu END -->
+				
+		<!-- Content -->
+<div id="content">
+	<h2>NIMBUS<span> by Crosscliq</span></h2>
+	<div class="innerLR">
+
+
+	<div class="pagination pagination-left margin-none">
+	 <ul>
+	   <li class="disabled"><a href="#">Dashboard</a></li>
+	   <li class="disabled"><a href="#">Project Center</a></li>
+	   <li class="active"><a href="#">Best Buy</a></li>
+	 </ul>
+	</div>
+
+
+	<!-- Widget -->
+	<div class="widget widget-tabs widget-tabs-double-2 border-bottom-none">
+	
+		<!-- Widget heading -->
+		<div class="widget-head border-bottom">
+			<ul>
+				<li class="active"><a class="glyphicons display" href="#overview" data-toggle="tab"><i></i>Overview</a></li>
+				<li><a class="glyphicons edit" href="#edit-account" data-toggle="tab"><i></i>Edit Project</a></li>
+				<!-- <li><a class="glyphicons calendar" href="#projects" data-toggle="tab"><i></i>Log</a></li> -->
+			</ul>
+		</div>
+		<!-- // Widget heading END -->
+		
+		<div class="widget-body">
+		
+			<form class="form-horizontal" style="margin: 0;">
+				<div class="tab-content" style="padding: 0;">
+				
+					<div class="tab-pane active widget-body-regular padding-none-TB" id="overview">
+					
+						<div class="row-fluid row-merge innerTB">
+							<div class="span3 center">
+							
+								<div class="innerR">
+									<!-- Profile Photo -->
+									<a href="" class="thumb"><img data-src="holder.js/300x200" alt="Profile" /></a>
+									<div class="separator bottom"></div>
+									<!-- // Profile Photo END -->
+
+									
+								</div>
+								
+							</div>
+							<div class="span9">
+							
+								<div class="row-fluid innerL">
+									<div class="span7">
+									
+										<!-- About -->
+										<h4>Best Buy</h4>
+										<div class="menubar links primary">
+											<ul>
+												<li>Website:</li>
+												<li><a href="">www.bestbuy.com</a></li>
+											</ul>
+										</div>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis porta purus, pulvinar mattis nulla tempus ut. Curabitur quis dui orci. Ut nisi dolor, dignissim a aliquet quis, vulputate id dui. Proin ultrices ultrices ligula, dictum varius turpis faucibus non. Curabitur faucibus ultrices nunc, nec aliquet leo tempor cursus.</p>
+										<!-- // About END -->
+									
+									</div>
+									<div class="span5">
+								
+										<!-- Bio -->
+										<h4><span>Project information</span></h4>
+										<div class="separator bottom"></div>
+										<ul class="unstyled icons">
+											<li class="glyphicons calendar"><i></i> <span class="label">12</span> <span class="label">December</span> <span class="label">2013</span></li>
+											<li class="glyphicons tie"><i></i><a href="http://www.mosaicpro.biz">DAV</a></li>
+											<li class="glyphicons truck"><i></i> Shipped</li>
+
+										</ul>
+										<!-- // Bio END -->
+										
+									</div>
+								</div>
+								
+								<div class="innerL innerT">
+									<div class="alert alert-primary">
+										<a class="close" data-dismiss="alert">&times;</a>
+										<p>Integer quis tempor mi. Donec venenatis dui in neque fringilla at iaculis libero ullamcorper. In velit sem, sodales id hendrerit ac, fringilla et est. Pellentesque at justo urna, eu pharetra tortor. Aenean aliquam, tellus vel suscipit luctus.</p>
+									</div>
+								</div>
+								
+								<div class="innerL">
+									<div class="row-fluid">
+										<div class="span7">
+										
+											<!-- Latest Orders/List Widget -->
+											<div class="widget margin-bottom-none" data-toggle="collapse-widget">
+											
+												<!-- Widget Heading -->
+												<div class="widget-head">
+													<h4 class="heading">Assets</h4>
+													<a href="" class="details pull-right">view all</a>
+												</div>
+												<!-- // Widget Heading -->
+												
+												<div class="widget-body list products">
+													<ul>
+														
+														<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">60F8000 TV<br/><strong>1</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+														
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Galaxy Tablet<br/><strong>2</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">55F7100<br/><strong>1</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">HWF750 Soundbar<br/><strong>1</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span class="img">photo</span>
+															<span class="title">Samsung Smart Remote<br/><strong>1</strong></span>
+															<span class="count"></span>
+														</li>
+														<!-- // List item END -->
+																												
+													</ul>
+												</div>
+											</div>
+											<!-- // Latest Orders/List Widget END -->
+										
+										</div>
+										<div class="span5">
+											
+											<div class="widget" data-toggle="collapse-widget">
+				
+												<!-- Widget Heading -->
+												<div class="widget-head">
+													<h4 class="heading glyphicons history"><i></i>Activity</h4>
+													<a href="" class="details pull-right">view all</a>
+												</div>
+												<!-- // Widget Heading END -->
+												
+												<div class="widget-body list">
+													<ul>
+													
+														<!-- List item -->
+														<li>
+															<span>Shipped</span>
+															<span class="count">12/01/2013</span>
+														</li>
+														<!-- // List item END -->
+														
+																												<!-- List item -->
+														<li>
+															<span>Delivered</span>
+															<span class="count">N/A</span>
+														</li>
+														<!-- // List item END -->
+																												<!-- List item -->
+														<li>
+															<span>Installed</span>
+															<span class="count">N/A</span>
+														</li>
+														<!-- // List item END -->
+																												
+													</ul>
+												</div>
+											</div>
+											
+			
+											
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					
+					</div>
+				
+					<!-- Tab content -->
+					<div class="tab-pane widget-body-regular" id="edit-account">
+					
+						<div class="widget widget-tabs widget-tabs-vertical row-fluid row-merge margin-none">
+	
+							<!-- Widget heading -->
+							<div class="widget-head span3">
+								<ul>
+									<li class="active"><a class="glyphicons pencil" href="#account-details" data-toggle="tab"><i></i>Project details</a></li>
+									<!-- <li><a class="glyphicons settings" href="#account-settings" data-toggle="tab"><i></i>Project settings</a></li>
+									<li><a class="glyphicons eye_open" href="#privacy-settings" data-toggle="tab"><i></i>Privacy settings</a></li>-->
+								</ul>
+							</div>
+							<!-- // Widget heading END -->
+							
+							<div class="widget-body span9">
+							
+								<div class="tab-content">
+								<div class="tab-pane active" id="account-details">
+							
+								<!-- Row -->
+								<div class="row-fluid">
+								
+									<!-- Column -->
+									<div class="span6">
+									
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Name</label>
+											<div class="controls">
+												<input type="text" value="Best Buy" class="span10" />
+												<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Name is mandatory"><i></i></span>
+											</div>
+										</div>
+										<!-- // Group END -->
+
+										
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Start Date</label>
+											<div class="controls">
+												<div class="input-append">
+													<input type="text" id="datepicker" class="span12" value="12/06/2013" />
+													<span class="add-on glyphicons calendar"><i></i></span>
+												</div>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+									</div>
+									<!-- // Column END -->
+									
+									<!-- Column -->
+									<div class="span6">
+									
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Group</label>
+											<div class="controls">
+												<select class="span12">
+													<option>DAV</option>
+													<option>Tablets</option>
+													<option>TV</option>
+												</select>
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+										<!-- Group -->
+										<div class="control-group">
+											<label class="control-label">Displays</label>
+											<div class="controls">
+												<input type="text" value="5" class="input-mini" />
+											</div>
+										</div>
+										<!-- // Group END -->
+										
+									</div>
+									<!-- // Column END -->
+									
+								</div>
+								<!-- // Row END -->
+								
+								<div class="separator line bottom"></div>
+								
+								<!-- Group -->
+								<div class="control-group row-fluid">
+									<label class="control-label">Details</label>
+									<div class="controls">
+										<textarea id="mustHaveId" class="wysihtml5 span12" rows="5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</textarea>
+									</div>
+								</div>
+								<!-- // Group END -->
+								
+								<!-- Form actions -->
+								<div class="form-actions" style="margin: 0;">
+									<button type="submit" class="btn btn-icon btn-primary glyphicons circle_ok"><i></i>Save changes</button>
+									<button type="button" class="btn btn-icon btn-default glyphicons circle_remove"><i></i>Cancel</button>
+								</div>
+								<!-- // Form actions END -->
+								
+								</div>
+								<div class="tab-pane" id="account-settings">
+								
+									<!-- Row -->
+									<div class="row-fluid">
+									
+										<!-- Column -->
+										<div class="span3">
+											<strong>Change password</strong>
+											<p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+										<!-- // Column END -->
+										
+										<!-- Column -->
+										<div class="span9">
+											<label for="inputUsername">Username</label>
+											<input type="text" id="inputUsername" class="span10" value="john.doe2012" disabled="disabled" />
+											<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Username can't be changed"><i></i></span>
+											<div class="separator"></div>
+													
+											<label for="inputPasswordOld">Old password</label>
+											<input type="password" id="inputPasswordOld" class="span10" value="" placeholder="Leave empty for no change" />
+											<span style="margin: 0;" class="btn-action single glyphicons circle_question_mark" data-toggle="tooltip" data-placement="top" data-original-title="Leave empty if you don't wish to change the password"><i></i></span>
+											<div class="separator"></div>
+											
+											<label for="inputPasswordNew">New password</label>
+											<input type="password" id="inputPasswordNew" class="span12" value="" placeholder="Leave empty for no change" />
+											<div class="separator"></div>
+											
+											<label for="inputPasswordNew2">Repeat new password</label>
+											<input type="password" id="inputPasswordNew2" class="span12" value="" placeholder="Leave empty for no change" />
+											<div class="separator"></div>
+										</div>
+										<!-- // Column END -->
+										
+									</div>
+									<!-- // Row END -->
+									
+									<div class="separator line bottom"></div>
+									
+									<!-- Row -->
+									<div class="row-fluid">
+									
+										<!-- Column -->
+										<div class="span3">
+											<strong>Contact details</strong>
+											<p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+										</div>
+										<!-- // Column END -->
+										
+										<!-- Column -->
+										<div class="span9">
+											<div class="row-fluid">
+												<div class="span6">
+													<label for="inputPhone">Phone</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons phone"><i></i></span>
+														<input type="text" id="inputPhone" class="input-large" placeholder="01234567897" />
+													</div>
+													<div class="separator"></div>
+														
+													<label for="inputEmail">E-mail</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons envelope"><i></i></span>
+														<input type="text" id="inputEmail" class="input-large" placeholder="contact@mosaicpro.biz" />
+													</div>
+													<div class="separator"></div>
+														
+													<label for="inputWebsite">Website</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons link"><i></i></span>
+														<input type="text" id="inputWebsite" class="input-large" placeholder="http://www.mosaicpro.biz" />
+													</div>
+													<div class="separator"></div>
+												</div>
+												<div class="span6">
+													<label for="inputFacebook">Facebook</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons facebook"><i></i></span>
+														<input type="text" id="inputFacebook" class="input-large" placeholder="/mosaicpro" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputTwitter">Twitter</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons twitter"><i></i></span>
+														<input type="text" id="inputTwitter" class="input-large" placeholder="/mosaicpro" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputSkype">Skype ID</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons skype"><i></i></span>
+														<input type="text" id="inputSkype" class="input-large" placeholder="mySkypeID" />
+													</div>
+													<div class="separator"></div>
+													
+													<label for="inputYahoo">Yahoo ID</label>
+													<div class="input-prepend">
+														<span class="add-on glyphicons yahoo"><i></i></span>
+														<input type="text" id="inputYahoo" class="input-large" placeholder="myYahooID" />
+													</div>
+													<div class="separator"></div>
+												</div>
+											</div>
+										</div>
+										<!-- // Column END -->
+										
+									</div>
+									<!-- // Row END -->
+									
+									<!-- Form actions -->
+									<div class="form-actions" style="margin: 0;">
+										<button type="submit" class="btn btn-icon btn-primary glyphicons circle_ok"><i></i>Save changes</button>
+									</div>
+									<!-- // Form actions END -->
+								
+								</div>
+								<div class="tab-pane" id="privacy-settings">
+									<div class="uniformjs">
+										<label class="checkbox"><input type="checkbox" checked="checked" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+										<label class="checkbox"><input type="checkbox" /> Vivamus et risus vel metus feugiat semper at sed odio.</label>
+										<label class="checkbox"><input type="checkbox" /> Aenean bibendum faucibus tellus, et facilisis justo imperdiet vel.</label>
+										<div class="alert alert-primary">
+											<a class="close" data-dismiss="alert">&times;</a>
+											<p>Integer quis tempor mi. Donec venenatis dui in neque fringilla at iaculis libero ullamcorper. In velit sem, sodales id hendrerit ac, fringilla et est. Pellentesque at justo urna, eu pharetra tortor. Aenean aliquam, tellus vel suscipit luctus, risus enim ornare tellus, ac ultrices nisi enim sed magna.</p>
+										</div>
+									</div>
+								</div>
+								</div>
+							
+							</div>
+						</div>
+						
+					</div>
+					<!-- // Tab content END -->
+					
+					<!-- Tab content -->
+					<div class="tab-pane widget-body-regular" id="projects">
+					
+						<div class="well">
+							<button type="button" class="btn btn-primary btn-icon glyphicons circle_plus pull-right"><i></i>Add project</button>
+							<p class="lead margin-none">1024 sales this week</p>
+							<div class="clearfix"></div>
+						</div>
+						
+						<table class="table table-primary table-striped table-vertical-center table-projects">
+							<thead>
+								<tr>
+									<th colspan="2">Project</th>
+									<th width="100" class="center"></th>
+									<th width="100" class="center"></th>
+									<th width="140" class="center"></th>
+									<th width="120" class="center"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://2.s3.envato.com/files/50444644/80-avatar.jpg" alt="" /></span></td>
+									<td class="important">Smashing - Premium Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://0.s3.envato.com/files/52347478/admin-avatar-12.jpg" alt="" /></span></td>
+									<td class="important">AdminPlus - Premium Bootstrap Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://2.s3.envato.com/files/50868169/avatar80.jpg" alt="" /></span></td>
+									<td class="important">AIR - Responsive Bootstrap Admin Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+								<tr>
+									<td width="80" class="center"><span class="thumb"><img src="http://3.s3.envato.com/files/47008628/boot-admin-80_v13.jpg" alt="" /></span></td>
+									<td class="important">BootAdmin - All-In-One Admin Responsive Template</td>
+									<td class="center stats"><span>Sales today</span><span class="count">153</span></td>
+									<td class="center stats"><span>Sales total</span><span class="count">1,365</span></td>
+									<td class="center stats"><span>Earnings</span><span class="count">&dollar;25,356.00</span></td>
+									<td class="center"><button type="button" class="btn btn-default">Manage</button></td>
+								</tr>
+							</tbody>
+						</table>
+						
+					</div>
+					<!-- // Tab content END -->
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- // Widget END -->
+
+
+	
+		
+	</div>
+		<!-- // Content END -->
+		
+</div>
+		<div class="clearfix"></div>
+		<!-- // Sidebar menu & content wrapper END -->
+				
+		<div id="footer" class="hidden-print">
+			
+			<!--  Copyright Line -->
+			<div class="copy">&copy; 2012 - 2013 - <a href="http://www.crosscliq.com">NimbusPro</a> - All Rights Reserved. <a href="http://crosscliq.com" target="_blank"></a> - Current version: v1.2 / <a target="_blank" href="http://crosscliq.com">changelog</a></div>
+			<!--  End Copyright Line -->
+	
+		</div>
+		<!-- // Footer END -->
+		
+	</div>
+	<!-- // Main Container Fluid END -->
+	
+
+<!-- Themer -->
+<div id="themer" class="collapse">
+	<div class="wrapper">
+		<span class="close2">&times; close</span>
+		<h4>Themer <span>color options</span></h4>
+		<ul>
+			<li>Theme: <select id="themer-theme" class="pull-right"></select><div class="clearfix"></div></li>
+			<li>Primary Color: <input type="text" data-type="minicolors" data-default="#ffffff" data-slider="hue" data-textfield="false" data-position="left" id="themer-primary-cp" /><div class="clearfix"></div></li>
+			<li>
+				<span class="link" id="themer-custom-reset">reset theme</span>
+				<span class="pull-right"><label>advanced <input type="checkbox" value="1" id="themer-advanced-toggle" /></label></span>
+			</li>
+		</ul>
+		<div id="themer-getcode" class="hide">
+			<hr class="separator" />
+			<button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
+			<button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- // Themer END -->
+
+	<!-- Modal Gallery -->
+	<div id="modal-gallery" class="modal modal-gallery hide fade hidden-print" tabindex="-1">
+	    <div class="modal-header">
+	        <a class="close" data-dismiss="modal">&times;</a>
+	        <h3 class="modal-title"></h3>
+	    </div>
+	    <div class="modal-body"><div class="modal-image"></div></div>
+	    <div class="modal-footer">
+	        <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+	        <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i> Previous</a>
+	        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> Slideshow</a>
+	        <a class="btn modal-download" target="_blank"><i class="icon-download"></i> Download</a>
+	    </div>
+	</div>
+	<!-- // Modal Gallery END -->
+	
+	<!-- JQuery -->
+	<script src="/ui/theme/scripts/plugins/system/jquery.min.js"></script>
+	
+	<!-- JQueryUI -->
+	<script src="/ui/theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+	
+	<!-- JQueryUI Touch Punch -->
+	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
+	<script src="/ui/theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	
+	
+	<!-- Modernizr -->
+	<script src="/ui/theme/scripts/plugins/system/modernizr.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="/ui/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- SlimScroll Plugin -->
+	<script src="/ui/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+	
+	<!-- Common Demo Script -->
+	<script src="/ui/theme/scripts/demo/common.js?1369753442"></script>
+	
+	<!-- Holder Plugin -->
+	<script src="/ui/theme/scripts/plugins/other/holder/holder.js"></script>
+	
+	<!-- Uniform Forms Plugin -->
+	<script src="/ui/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+
+	<!-- Global -->
+	<script>
+	var basePath = '/ui/';
+	</script>
+	
+	<!-- Bootstrap Extended -->
+	<script src="/ui/bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
+	<script src="/ui/bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script src="/ui/bootstrap/extend/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"></script>
+	<script src="/ui/bootstrap/extend/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+	<script src="/ui/bootstrap/extend/jasny-bootstrap/js/bootstrap-fileupload.js"></script>
+	<script src="/ui/bootstrap/extend/bootbox.js"></script>
+	<script src="/ui/bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js"></script>
+	<script src="/ui/bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js"></script>
+	
+	<!-- Google Code Prettify -->
+	<script src="/ui/theme/scripts/plugins/other/google-code-prettify/prettify.js"></script>
+	
+	<!-- Gritter Notifications Plugin -->
+	<script src="/ui/theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>
+	
+	<!-- Notyfy Notifications Plugin -->
+	<script src="/ui/theme/scripts/plugins/notifications/notyfy/jquery.notyfy.js"></script>
+	
+	<!-- MiniColors Plugin -->
+	<script src="/ui/theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.js"></script>
+	
+	<!-- DateTimePicker Plugin -->
+	<script src="/ui/theme/scripts/plugins/forms/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+	<!-- Cookie Plugin -->
+	<script src="/ui/theme/scripts/plugins/system/jquery.cookie.js"></script>
+	
+	<!-- Colors -->
+	<script>
+	var primaryColor = '#57a8c6',
+		dangerColor = '#b55151',
+		successColor = '#507894',
+		warningColor = '#ab7a4b',
+		inverseColor = '#45484d';
+	</script>
+	
+	<!-- Themer -->
+	<script>
+	var themerPrimaryColor = primaryColor;
+	</script>
+	<script src="/ui/theme/scripts/demo/themer.js"></script>
+
+
+	
+	<!-- Sparkline Charts Plugin -->
+	<script src="/ui/theme/scripts/plugins/charts/sparkline/jquery.sparkline.min.js"></script>
+			<!-- DataTables Tables Plugin -->
+	<script src="/ui/theme/scripts/plugins/tables/DataTables/media/js/jquery.dataTables.min.js"></script>
+	<script src="/ui/theme/scripts/plugins/tables/DataTables/media/js/DT_bootstrap.js"></script>
+	
+	<!-- Tables Demo Script -->
+	<script src="/ui/theme/scripts/demo/tables.js"></script>
+</body>
+</html>
