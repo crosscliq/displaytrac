@@ -1,4 +1,4 @@
-i<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
@@ -781,18 +781,7 @@ i<!DOCTYPE html>
 	<div class="row-fluid">
 			
 
-		
-			<!-- Traffic Sources Pie Chart -->
-			<div class="widget" data-toggle="collapse-widget" data-collapse-closed="false">
-				<div class="widget-head">
-					<h4 class="heading glyphicons pie_chart"><i></i>Traffic sources</h4>
-				</div>
-				<div class="widget-body">
-					<div id="traffic-map" style="height: 200px"></div>
-					<button id="traffic-map-button">click</button>
-				</div>
-			</div>
-			<!-- // Traffic Sources Pie Chart END -->
+			 <?php include('../common/map/map.htm'); ?>
 			
 		
 	
@@ -1029,43 +1018,7 @@ i<!DOCTYPE html>
  	 <script src='/ui/theme/scripts/demo/jquery.flexslider-min.js'></script>
 
 
- 	 <script>
- 	
- 	 $(function(){
-      	$('#traffic-map').vectorMap({
-			  map: 'us_lcc_en',
-			  
-			  
-			});
-
-      	
-   	 });
-
- 	 $( "#traffic-map-button" ).click(function() {
-
- 	 	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
-
- 	 	mapObject.addMarkers([{ latLng: [42.940893, -71.444068], name: 'Test' }], []);
-
-	});
-
- 	 //adding marker with push
- 	 var mapChannel = pusher.subscribe('trafficmap');
-    mapChannel.bind('addTraffic', function(data) {
-     
-     	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
-
-
- 	 	mapObject.addMarkers([{ latLng: [data.lat, data.lng], name: data.name }], []);
-
-
-    });
-
-
-
-
-
- 
- 	 </script>
+ 	 
+ 	 <?php include('../common/map/map.js'); ?>
 </body>
 </html>
