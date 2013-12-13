@@ -7,7 +7,7 @@
 			  markersSelectable: false,
 			     markerStyle: {
       				initial: {
-        				fill: '#7bbfd6',
+        				fill: 'red',
         				stroke: '#0088cc'
       				},
 				 hover: {
