@@ -6,6 +6,7 @@
 			  map: 'us_lcc_en',
         markersSelectableOne: false,
         markersSelectable: false,
+        zoomOnScroll: false,
 			     markerStyle: {
           				initial: {
             				fill: 'red',
@@ -27,18 +28,100 @@
           },
           onMarkerLabelShow: function(e, code){
             e.preventDefault();
+          },
+          onViewportChange: function(e, code){
+            e.preventDefault();
           }
 
    	 });
 
- 	 $( "#traffic-map-button" ).click(function() {
+ 	 $( "#traffic-map-button-vegas" ).click(function() {
 
- 	 	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+    if($( "#traffic-map-button-vegas" ).hasClass('btn-success')) {
+      $( "#traffic-map-button-vegas" ).removeClass('btn-success');
+      $( "#traffic-map-button-vegas" ).addClass('off');
+      console.log('try');
+       $('[data-index="lasvegas"]').remove();
+    } else {
 
-      mapObject.addMarker('name',{ latLng: [42.940893, -71.444068], name: 'Test' });
- 	 //	mapObject.addMarkers([{ latLng: [42.940893, -71.444068], name: 'Test' }], []);
+      if($( "#traffic-map-button-vegas" ).hasClass('btn-danger')) {
+      $( "#traffic-map-button-vegas" ).removeClass('btn-danger');
+      $( "#traffic-map-button-vegas" ).addClass('btn-success');
+       $('[data-index="lasvegas"]').attr('fill','green');
+    }
 
+    if($( "#traffic-map-button-vegas" ).hasClass('off')) {
+      $( "#traffic-map-button-vegas" ).removeClass('off');
+      $( "#traffic-map-button-vegas" ).addClass('btn-danger');
+
+      var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+    
+    mapObject.addMarker('lasvegas',{ latLng: [36.0800, -115.1522], name: 'Las Vegas' });
+
+    }
+    }
+
+
+ 	
 	});
+
+   $( "#traffic-map-button-nyc" ).click(function() {
+
+    if($( "#traffic-map-button-nyc" ).hasClass('btn-success')) {
+      $( "#traffic-map-button-nyc" ).removeClass('btn-success');
+      $( "#traffic-map-button-nyc" ).addClass('off');
+      console.log('try');
+       $('[data-index="nyc"]').remove();
+    } else {
+
+      if($( "#traffic-map-button-nyc" ).hasClass('btn-danger')) {
+      $( "#traffic-map-button-nyc" ).removeClass('btn-danger');
+      $( "#traffic-map-button-nyc" ).addClass('btn-success');
+       $('[data-index="nyc"]').attr('fill','green');
+    }
+
+    if($( "#traffic-map-button-nyc" ).hasClass('off')) {
+      $( "#traffic-map-button-nyc" ).removeClass('off');
+      $( "#traffic-map-button-nyc" ).addClass('btn-danger');
+
+      var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+    
+    mapObject.addMarker('nyc',{ latLng: [40.6700, -73.9400], name: 'New York' });
+
+    }
+    }  
+  });
+
+   $( "#traffic-map-button-losangeles" ).click(function() {
+
+    if($( "#traffic-map-button-losangeles" ).hasClass('btn-success')) {
+      $( "#traffic-map-button-losangeles" ).removeClass('btn-success');
+      $( "#traffic-map-button-losangeles" ).addClass('off');
+      console.log('try');
+       $('[data-index="losangeles"]').remove();
+    } else {
+
+      if($( "#traffic-map-button-losangeles" ).hasClass('red')) {
+      $( "#traffic-map-button-losangeles" ).removeClass('red');
+      $( "#traffic-map-button-losangeles" ).addClass('btn-success');
+       $('[data-index="losangeles"]').attr('fill','green');
+    }
+
+    if($( "#traffic-map-button-losangeles" ).hasClass('off')) {
+      $( "#traffic-map-button-losangeles" ).removeClass('off');
+      $( "#traffic-map-button-losangeles" ).addClass('red');
+
+      var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+    
+    mapObject.addMarker('losangeles',{ latLng: [34.0500, -118.2500], name: 'Los Angeles' });
+
+    }
+    }  
+  });
+
+
+
+
 
  	 //adding marker with push
  	 var mapChannel = pusher.subscribe('trafficmap');
