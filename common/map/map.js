@@ -1,6 +1,7 @@
 <script>
  	
  	 $(function(){
+
       	$('#traffic-map').vectorMap({
 			  map: 'us_lcc_en',
         markersSelectableOne: false,
@@ -27,6 +28,7 @@
           onMarkerLabelShow: function(e, code){
             e.preventDefault();
           }
+
    	 });
 
  	 $( "#traffic-map-button" ).click(function() {
@@ -57,9 +59,6 @@
 
     });
 
+     });
 
-
-
-
- 
- 	 </script>
+</script>
