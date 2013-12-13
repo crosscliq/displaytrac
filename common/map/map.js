@@ -3,6 +3,8 @@
  	 $(function(){
       	$('#traffic-map').vectorMap({
 			  map: 'us_lcc_en',
+			  markersSelectableOne: false,
+			  markersSelectable: false,
 			     markerStyle: {
       				initial: {
         				fill: '#7bbfd6',
