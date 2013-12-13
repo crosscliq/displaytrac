@@ -27,12 +27,6 @@
           onMarkerLabelShow: function(e, code){
             e.preventDefault();
           }
-      				
-    	//	}
-			  
-			});
-
-      	
    	 });
 
  	 $( "#traffic-map-button" ).click(function() {
