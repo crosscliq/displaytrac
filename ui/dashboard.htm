@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+i<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
@@ -788,8 +788,8 @@
 					<h4 class="heading glyphicons pie_chart"><i></i>Traffic sources</h4>
 				</div>
 				<div class="widget-body">
-					<div id="usa-unemployment" style="height: 200px"></div>
-
+					<div id="traffic-map" style="height: 200px"></div>
+					<button id="traffic-map-button">click</button>
 				</div>
 			</div>
 			<!-- // Traffic Sources Pie Chart END -->
@@ -1004,7 +1004,7 @@
 	<!-- Vector Maps data -->
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-us-aea-en.js"></script>
 	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-us-lcc-en.js"></script>
-
+	<script src="/ui/theme/scripts/plugins/maps/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
 
 	<!-- Google JSAPI -->
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -1027,5 +1027,45 @@
  	 <script src="/ui/arbor/arbor-graphics.js" type="text/javascript"></script>
   	 <script src="/ui/arbor/main.js" type="text/javascript"></script>
  	 <script src='/ui/theme/scripts/demo/jquery.flexslider-min.js'></script>
+
+
+ 	 <script>
+ 	
+ 	 $(function(){
+      	$('#traffic-map').vectorMap({
+			  map: 'us_lcc_en',
+			  
+			  
+			});
+
+      	
+   	 });
+
+ 	 $( "#traffic-map-button" ).click(function() {
+
+ 	 	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+
+ 	 	mapObject.addMarkers([{ latLng: [42.940893, -71.444068], name: 'Test' }], []);
+
+	});
+
+ 	 //adding marker with push
+ 	 var mapChannel = pusher.subscribe('trafficmap');
+    mapChannel.bind('addTraffic', function(data) {
+     
+     	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
+
+
+ 	 	mapObject.addMarkers([{ latLng: [data.lat, data.lng], name: data.name }], []);
+
+
+    });
+
+
+
+
+
+ 
+ 	 </script>
 </body>
 </html>

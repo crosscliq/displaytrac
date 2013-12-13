@@ -64,13 +64,19 @@
  // error('not supported');
 }
 
-function success() {
+function trackonmap(position) {
 
-  console.log('location found');
+  var url = '/map/' + position.coords.latitude +'/' +position.coords.longitude +'/S<?php echo session_id();?>';
+
+  $.post( url, function( data ) {});
 
 }
 
-function error() {
+function success(position) {
+  trackonmap(position);
+}
+
+function error(position) {
 
   console.log('location not found');
 
