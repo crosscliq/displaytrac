@@ -30,9 +30,16 @@
      
      	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
 
-       mapObject.addMarker(data.name, { latLng: [data.lat, data.lng], name: data.name, style: {fill: data.fill}}  );
+       mapObject.addMarker(data.name, { latLng: [data.lat, data.lng], name: data.name}  );
  	 //	mapObject.addMarkers([{ latLng: [data.lat, data.lng], name: data.name }], []);
 
+
+    });
+
+    mapChannel.bind('changeColor', function(data) {
+     
+    	$('data-index[' + data.name + ']').style('fill',data.fill);
+	console.log('change color of ' + data.name + ' to: ' + data.fill );
 
     });
 
