@@ -3,7 +3,12 @@
  	 $(function(){
       	$('#traffic-map').vectorMap({
 			  map: 'us_lcc_en',
-			  
+			     markerStyle: {
+      				initial: {
+        				fill: '#7bbfd6',
+        				stroke: '#0088cc'
+      				}
+    			    }
 			  
 			});
 
