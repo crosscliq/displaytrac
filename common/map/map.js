@@ -7,7 +7,9 @@
       				initial: {
         				fill: '#7bbfd6',
         				stroke: '#0088cc'
-      				}
+      				},
+				 hover: {
+				}
     			    }
 			  
 			});
@@ -37,8 +39,8 @@
     });
 
     mapChannel.bind('changeColor', function(data) {
-     
-    	$('data-index[' + data.name + ']').attr('fill',data.fill);
+       $('[data-index=' + data.name + ']').attr('fill',data.fill);
+
 	console.log('change color of ' + data.name + ' to: ' + data.fill );
 
     });
