@@ -38,7 +38,7 @@
 
     mapChannel.bind('changeColor', function(data) {
      
-    	$('data-index[' + data.name + ']').style('fill',data.fill);
+    	$('data-index[' + data.name + ']').attr('fill',data.fill);
 	console.log('change color of ' + data.name + ' to: ' + data.fill );
 
     });
