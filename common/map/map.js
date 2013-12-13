@@ -101,15 +101,15 @@
        $('[data-index="losangeles"]').remove();
     } else {
 
-      if($( "#traffic-map-button-losangeles" ).hasClass('red')) {
-      $( "#traffic-map-button-losangeles" ).removeClass('red');
+      if($( "#traffic-map-button-losangeles" ).hasClass('btn-danger')) {
+      $( "#traffic-map-button-losangeles" ).removeClass('btn-danger');
       $( "#traffic-map-button-losangeles" ).addClass('btn-success');
        $('[data-index="losangeles"]').attr('fill','green');
     }
 
     if($( "#traffic-map-button-losangeles" ).hasClass('off')) {
       $( "#traffic-map-button-losangeles" ).removeClass('off');
-      $( "#traffic-map-button-losangeles" ).addClass('red');
+      $( "#traffic-map-button-losangeles" ).addClass('btn-danger');
 
       var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
     
