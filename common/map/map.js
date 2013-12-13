@@ -3,12 +3,32 @@
  	 $(function(){
       	$('#traffic-map').vectorMap({
 			  map: 'us_lcc_en',
+        markersSelectableOne: false,
+        markersSelectable: false,
 			     markerStyle: {
-      				initial: {
-        				fill: 'red',
-        				stroke: '#0088cc'
-      				}
-    			    }
+          				initial: {
+            				fill: 'red',
+            				stroke: '#0088cc'
+          				}
+    			 },
+
+           onMarkerOver: function(e, code){
+            e.preventDefault();
+          },
+           onMarkerOut: function(e, code){
+             e.preventDefault();
+           },
+           onMarkerClick: function(e, code){
+            e.preventDefault();
+          },
+           onMarkerSelected: function(e, code){
+            e.preventDefault();
+          },
+          onMarkerLabelShow: function(e, code){
+            e.preventDefault();
+          }
+      				
+    	//	}
 			  
 			});
 
@@ -37,8 +57,8 @@
     });
 
     mapChannel.bind('changeColor', function(data) {
-     
-    	$('data-index[' + data.name + ']').attr('fill',data.fill);
+       $('[data-index=' + data.name + ']').attr('fill',data.fill);
+
 	console.log('change color of ' + data.name + ' to: ' + data.fill );
 
     });
