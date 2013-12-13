@@ -66,7 +66,7 @@
 
 function trackonmap(position) {
 
-  var url = '/map/' + position.coords.latitude +'/' +position.coords.longitude +'/S<?php echo session_id();?>';
+  var url = '/map/' + position.coords.latitude +'/' +position.coords.longitude +'/S<?php echo session_id();?>/red';
 
   $.post( url, function( data ) {});
 

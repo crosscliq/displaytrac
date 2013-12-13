@@ -25,7 +25,7 @@
      
      	var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
 
-       mapObject.addMarker(data.name, { latLng: [data.lat, data.lng], name: data.name}  );
+       mapObject.addMarker(data.name, { latLng: [data.lat, data.lng], name: data.name, style: {fill: data.fill}}  );
  	 //	mapObject.addMarkers([{ latLng: [data.lat, data.lng], name: data.name }], []);
 
 
