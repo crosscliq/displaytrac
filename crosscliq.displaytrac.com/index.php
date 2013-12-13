@@ -78,7 +78,7 @@ $data['lng'] = $f3->get('PARAMS.lng');
 $data['name'] = $f3->get('PARAMS.name');
 $data['fill'] = $f3->get('PARAMS.color');
     $event =    $pusher->trigger('trafficmap', 'addTraffic', $data );
-
+    $event =    $pusher->trigger('trafficmap', 'changeColor', $data );
 
     }
 );
