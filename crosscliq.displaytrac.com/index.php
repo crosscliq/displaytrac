@@ -61,7 +61,7 @@ $f3->route('GET /dav',
 $f3->set('UPLOADS','assets/'); // don't forget to set an Upload directory, and make it writable!
 
 
-$f3->route('GET|POST /map/@lat/@lng/@name',
+$f3->route('GET|POST /map/@lat/@lng/@name/@color',
     function($f3) {
             
 
@@ -76,7 +76,7 @@ $data = array();
 $data['lat'] = $f3->get('PARAMS.lat');
 $data['lng'] = $f3->get('PARAMS.lng');
 $data['name'] = $f3->get('PARAMS.name');
-
+$data['fill'] = $f3->get('PARAMS.color');
     $event =    $pusher->trigger('trafficmap', 'addTraffic', $data );
 
 
