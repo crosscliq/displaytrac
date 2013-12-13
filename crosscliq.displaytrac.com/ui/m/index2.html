@@ -59,7 +59,7 @@
 
 function trackonmap(position) {
 
-  var url = '/map/' + position.coords.latitude +'/' +position.coords.longitude +'/S<?php echo session_id();?>/green';
+  var url = '/map/update/S<?php echo session_id();?>/green';
 
   $.post( url, function( data ) {});
 
