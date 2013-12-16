@@ -244,131 +244,30 @@ $f3->route('GET /m/map',
 );
 
 
-
-
-$f3->route('GET /m/global/@id/samsung_55F7000',
+$f3->route('GET /m/global/@id/@product',
   function($f3) {
+    $product = $f3->get('PARAMS.product');
+    $name = ucwords(str_replace('_', ' ', $product));
     $data = array();
     $data['type'] = 'child';
     $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung 55F7000';
+    $data['name'] = $name;
     $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_55F7000';
+    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/'.$product;
 
     $f3->set('id',$f3->get('PARAMS.id'));
     $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_55F7000', $data);
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').$product, $data);
         
-        echo $view->render('m/samsung_55F7000.html');
-
-  }
-);
-
-$f3->route('GET /m/global/@id/samsung_55F7100',
-  function($f3) {
-     $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung 55F7100';
-    $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_55F7100';
-        $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_55F7100', $data);
-        
-        echo $view->render('m/samsung_55F7100.html');
-
-  }
-);
-
-$f3->route('GET /m/global/@id/samsung_60F8000',
-  function($f3) {
-      $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung 60F8000';
-    $data['color'] = 'red'; 
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_60F8000';
-        $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_60F8000', $data);
-        
-        echo $view->render('m/samsung_60F8000.html');
-
-  }
-);
-
-$f3->route('GET /m/global/@id/samsung_GTN8013',
-  function($f3) {
-    $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung GTN8013';
-    $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_GTN8013';
-        $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_GTN8013', $data);
-        
-        echo $view->render('m/samsung_GTN8013.html');
-
-  }
-);
-
-$f3->route('GET /m/global/@id/samsung_HWF750',
-  function($f3) {
-
-    $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung HWF750';
-    $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_HWF750';
-    $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_HWF750',$data  );
-        
-        echo $view->render('m/samsung_HWF750.html');
+        echo $view->render('m/'.$product.'.html');
 
   }
 );
 
 
-$f3->route('GET /m/global/@id/samsung_HWF750_sub',
-  function($f3) {
 
-    $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung HWF750 Sub';
-    $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_HWF750_sub';
-        $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_HWF750_sub', $data);
-        
-        echo $view->render('m/samsung_HWF750_sub.html');
 
-  }
-);
 
-$f3->route('GET /m/global/@id/samsung_smart_remote',
-  function($f3) {
-
-     $data = array();
-    $data['type'] = 'child';
-    $data['parent'] = $f3->get('SESSION.id').'global';
-    $data['name'] = 'Samsung Smart Remote';
-    $data['color'] = 'red';
-    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/samsung_smart_remote';
-        $f3->set('id',$f3->get('PARAMS.id'));
-    $view=new View;
-    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').'samsung_smart_remote',  $data);
-        
-        echo $view->render('m/samsung_smart_remote.html');
-
-  }
-);
 
 
 
