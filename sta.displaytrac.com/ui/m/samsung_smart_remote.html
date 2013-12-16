@@ -120,8 +120,8 @@ function error() {
        
         <!-- contact form starts -->
         <form action="/asset/update" method="post" class="contactForm" style="clear:both;" role="form">
-          <input type="hidden" name="assetName" value="Samsung Smart Remote" />
-          <input type="hidden" name="asset" value="samsung_smart_remote" />
+          <input type="hidden" name="assetName" value="<?php echo $name; ?>" />
+          <input type="hidden" name="asset" value="<?php echo $product; ?>" />
           <input type="hidden" name="id" value="<?php echo $id; ?>" />
            <div class="form-group">
             <label>Is the Samsung Smart Remote available and working properly?</label>

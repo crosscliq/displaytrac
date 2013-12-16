@@ -246,6 +246,9 @@ $f3->route('GET /m/map',
 
 $f3->route('GET /m/global/@id/@product',
   function($f3) {
+
+
+
     $product = $f3->get('PARAMS.product');
     $name = ucwords(str_replace('_', ' ', $product));
     $data = array();
@@ -256,6 +259,8 @@ $f3->route('GET /m/global/@id/@product',
     $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/'.$product;
 
     $f3->set('id',$f3->get('PARAMS.id'));
+    $f3->set('product',$product);
+    $f3->set('name',$name);
     $view=new View;
     nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').$product, $data);
         

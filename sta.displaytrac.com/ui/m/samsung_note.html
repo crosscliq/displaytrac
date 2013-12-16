@@ -119,8 +119,8 @@ function error() {
        
         <!-- contact form starts -->
         <form action="/asset/update" method="post" class="contactForm" style="clear:both;" role="form">
-          <input type="hidden" name="assetName" value="Samsung 55F7000" />
-          <input type="hidden" name="asset" value="samsung_55F7000" />
+          <input type="hidden" name="assetName" value="<?php echo $name; ?>" />
+          <input type="hidden" name="asset" value="<?php echo $product; ?>" />
           <input type="hidden" name="id" value="<?php echo $id; ?>" />
           <div class="form-group">
             <label>Is the Galaxy Note 3 available and working properly?</label>
