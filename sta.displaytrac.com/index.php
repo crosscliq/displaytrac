@@ -45,19 +45,6 @@ $f3->set('placements', array_reverse($dash->placements));
     }
 );
 
-
-$f3->route('GET /dav',
-    function($f3) {
-       		
-
-        $view=new View;
-
-        
-        echo $view->render('index-DAV.html');
-    }
-);
-
-
 $f3->set('UPLOADS','assets/'); // don't forget to set an Upload directory, and make it writable!
 
 
