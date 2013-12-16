@@ -7462,6 +7462,13 @@ div.glyphicons.glyphicon-primary i:before {
 	width: 100px;
 	margin: 0 auto;
 }
+.target {
+	background:url(../images/company_logos/target.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
 .walmart {
 	background:url(../images/company_logos/walmart.png) no-repeat;
 	height: 45px;

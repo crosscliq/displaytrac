@@ -84,8 +84,8 @@ var charts =
 		// data
 		data: [
 			{ label: "Install Complete",  data: 92 },
-			{ label: "Needs Tech Support",  data: 3 },
-			{ label: "Yet to ship",  data: 5 }
+			{ label: "Needs Tech Support",  data: 8 },
+		
 		],
 		
 		// chart object
