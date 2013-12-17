@@ -386,7 +386,7 @@ $f3->route('GET /m/global/@id/finish',
                 $view=new View;
                 nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
 
-            $f3->mock('GET /map/update/'.$f3->get("SESSION.id").'/green');
+            $f3->mock('GET /map/update/S'.$f3->get("SESSION.id").'/green');
    
         echo $view->render('m/finished.html');
 
