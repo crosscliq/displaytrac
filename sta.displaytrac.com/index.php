@@ -37,6 +37,26 @@ $dash->load(array('@dash=?','1'));
 $f3->set('placements', array_reverse($dash->placements));
 
 
+ /*$db=new DB\SQL(
+    'mysql:host=localhost;port=3306;dbname=locations',
+    'root',
+    'F0rgetting01'
+);
+
+       /* $places = new DB\SQL\Mapper($db,'places');
+        $items = $places->find(array('enabled=?',1));
+
+        $locations = array();
+
+        foreach ($items as $location) {
+            $locations[] = "{latLng: [".$location['latitude'].", ".$location['longitude']."], name: '".$location['name']."'}"; 
+        }
+
+
+       //echo  implode(', ', $locations);
+        
+        //die();*/
+
         $view=new View;
 
         $f3->set('nodetree', $view->render('nodetree.htm'));
