@@ -467,13 +467,13 @@ var charts =
 			
 			// generate some data
 
-    var g1 = [[0, 100], [6, 100]];
-    var g2 = [[9, 100], [10, 100], [11, 100], [12, 100], [13, 100], [14, 100], [15, 100], [16, 100], [17, 100], [18, 100], [19, 100], [20, 100], [21, 100], [22, 100], [23, 100]];
-
-    this.data.d1 = [[1, 0], [2, 60], [3, 80], [4, 90],[5, 100],[6, 100]];
-    this.data.d2 = [[9, 0],[10, 10],[11, 20],[12, 30],[13,40],[14, 50],[15,60],[16, 65],[17, 70],[18, 75],[19, 80],[20, 85],[21, 90],[22, 95],[23, 100]];
+    var g1 = [[0, 100], [8, 100]];
+    var g2 = [[14, 100], [15, 100], [16, 100], [17, 100], [18, 100], [19, 100], [20, 100], [21, 100]];
+ 
+    this.data.d1 = [[1, 0], [2, 60], [3, 80], [4, 90],[5, 100],[8, 100]];
+    this.data.d2 = [[14, 0],[15,30],[16, 65],[17, 70],[18, 75],[19, 80],[20, 95],[21, 100]];
     this.data.d3 = [[6, 100],[7, 50], [9, 0], [15, 60], [23,100], [24, 50], [30, 0]];
-    this.data.d4 = [[9, 0],[23, 100]];
+    this.data.d4 = [[14, 0],[21, 100]];
    					
 			//this.data.d1 = [[1, 0], [2, 60], [3, 80], [4, 90],[5, 100],[6, 100],[7, 0],[8, 0],[9, 0],[10, 10],[11, 20],[12, 30],[13,40],[14, 50],[15,60],[16, 65],[17, 70],[18, 75],[19, 80],[20, 85],[21, 90],[22, 95],[23, 100]];
 			//this.data.d2 = [[1, 6], [2, charts.utility.randNum()-4], [3, charts.utility.randNum()-4], [4, charts.utility.randNum()],[5, 4+charts.utility.randNum()],[6, 4+charts.utility.randNum()],[7, 5+charts.utility.randNum()],[8, 5+charts.utility.randNum()],[9, 6+charts.utility.randNum()],[10, 6+charts.utility.randNum()],[11, 6+charts.utility.randNum()],[12, 2+charts.utility.randNum()],[13, 3+charts.utility.randNum()],[14, 4+charts.utility.randNum()],[15, 4+charts.utility.randNum()],[16, 4+charts.utility.randNum()],[17, 5+charts.utility.randNum()],[18, 5+charts.utility.randNum()],[19, 2+charts.utility.randNum()],[20, 2+charts.utility.randNum()],[21, 3+charts.utility.randNum()],[22, 3+charts.utility.randNum()],[23, 3+charts.utility.randNum()],[24, 2+charts.utility.randNum()],[25, 4+charts.utility.randNum()],[26, 4+charts.utility.randNum()],[27,5+charts.utility.randNum()],[28, 2+charts.utility.randNum()],[29, 2+charts.utility.randNum()], [30, 3+charts.utility.randNum()]];
@@ -609,7 +609,7 @@ var charts =
 
 		    var d5 = [];
 		    for (var i = 1; i <= 1; i += 1)
-		        d5.push([92, 52]);
+		        d5.push([98, 52]);
 		 
 		    var ds = new Array();
 		 
@@ -623,11 +623,7 @@ var charts =
 		        data:d2,
 		        bars: {order: 2,show:false}
 		    });
-		    ds.push({
-		    	label: "Demo Present & Functioning",
-		        data:d3,
-		        bars: {order: 3, show:true}
-		    });
+
 		    ds.push({
 		    	label: "",
 		        data:d4,

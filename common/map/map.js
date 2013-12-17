@@ -6,6 +6,18 @@
 			  map: 'us_lcc_en',
         markersSelectableOne: false,
         markersSelectable: false,
+    markers: [
+      {latLng: [37.128445, -113.523721], name: 'WASHINGTON UT #861'},
+      {latLng: [40.724203, -111.898175], name: 'SOUTH SALT LAKE UT #527 '},
+      {latLng: [40.6589040,-111.8878890], name: 'MURRAY UT #521'},
+      {latLng: [40.6118130,-111.9836970], name: 'JORDAN LANDING UT #1146'},
+      {latLng: [40.7218450,-111.5388390], name: 'PARK CITY UT #1761'},
+      {latLng: [40.7218450,-111.5388390], name: 'AMERICAN FORK UT #1402'},
+      {latLng: [40.3844040,-111.8198600], name: 'OREM UT #773'},
+      {latLng: [41.1770210,-112.0038790], name: 'RIVERDALE UT #496'},
+      {latLng: [41.7404310,-111.8347360], name: 'LOGAN UT #945'},
+     ],
+
         zoomOnScroll: false,
 			     markerStyle: {
           				initial: {
@@ -56,7 +68,7 @@
 
       var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
     
-    mapObject.addMarker('lasvegas',{ latLng: [36.0800, -115.1522], name: 'Las Vegas' });
+    mapObject.addMarker('lasvegas',{ latLng: [32.7150, -117.1625], name: 'San Diego' });
 
     }
     }
@@ -86,7 +98,7 @@
 
       var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
     
-    mapObject.addMarker('nyc',{ latLng: [40.6700, -73.9400], name: 'New York' });
+    mapObject.addMarker('nyc',{ latLng: [32.7758, -96.7967], name: 'Dallas' });
 
     }
     }  
@@ -113,7 +125,7 @@
 
       var mapObject = $('#traffic-map').vectorMap('get', 'mapObject');
     
-    mapObject.addMarker('losangeles',{ latLng: [34.0500, -118.2500], name: 'Los Angeles' });
+    mapObject.addMarker('losangeles',{ latLng: [41.8819, -87.6278], name: 'Chicago' });
 
     }
     }  

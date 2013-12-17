@@ -7455,6 +7455,14 @@ div.glyphicons.glyphicon-primary i:before {
 	width: 100px;
 	margin: 0 auto;
 }
+.sprint {
+	background:url(../images/company_logos/sprint.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
+
 .tmobile {
 	background:url(../images/company_logos/tmobile.png) no-repeat;
 	height: 45px;
