@@ -323,6 +323,37 @@ $f3->route('GET /m/global/@id/@product',
   }
 );
 
+$f3->route('GET /m/global/@id/@product/finish',
+  function($f3) {
+    $product = $f3->get('PARAMS.product');
+    $name = ucwords(str_replace('_', ' ', $product));
+    $data = array();
+    $data['type'] = 'child';
+    $data['parent'] = $f3->get('SESSION.id').'global';
+    $data['name'] = $name;
+    $data['color'] = 'red';
+    $data['link'] = '/m/global/'.$f3->get('PARAMS.id').'/'.$product;
+
+    $f3->set('id',$f3->get('PARAMS.id'));
+    $view=new View;
+    nodePusher($f3->get('SESSION.id').'global', $f3->get('SESSION.id').$product, $data);
+        
+    $data = array();
+    $data['type'] = 'node';
+    $data['name'] = 'Global';
+    $data['color'] = 'Green';
+    $data['link'] = '/m/global';
+
+    $view=new View;
+    nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
+
+
+
+        echo $view->render('m/'.$product.'.html');
+
+  }
+);
+
 
 
 
