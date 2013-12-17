@@ -6,23 +6,15 @@
 			  map: 'us_lcc_en',
         markersSelectableOne: false,
         markersSelectable: false,
-    markers: [
-      {latLng: [37.128445, -113.523721], name: 'WASHINGTON UT #861'},
-      {latLng: [40.724203, -111.898175], name: 'SOUTH SALT LAKE UT #527 '},
-      {latLng: [40.6589040,-111.8878890], name: 'MURRAY UT #521'},
-      {latLng: [40.6118130,-111.9836970], name: 'JORDAN LANDING UT #1146'},
-      {latLng: [40.7218450,-111.5388390], name: 'PARK CITY UT #1761'},
-      {latLng: [40.7218450,-111.5388390], name: 'AMERICAN FORK UT #1402'},
-      {latLng: [40.3844040,-111.8198600], name: 'OREM UT #773'},
-      {latLng: [41.1770210,-112.0038790], name: 'RIVERDALE UT #496'},
-      {latLng: [41.7404310,-111.8347360], name: 'LOGAN UT #945'},
-     ],
+ 	 hoverOpacity: 1,
+	 hoverColor: false,
 
-        zoomOnScroll: false,
+        zoomOnScroll: true,
 			     markerStyle: {
           				initial: {
             				fill: 'red',
-            				stroke: '#0088cc'
+            				stroke: '#0088cc',
+					opacity: '0.5'
           				}
     			 },
 
@@ -153,6 +145,11 @@
 
     mapChannel.bind('changeColor', function(data) {
        $('[data-index=' + data.name + ']').attr('fill',data.fill);
+	if (data.fill=="green") {
+       	$('[data-index=' + data.name + ']').attr('opacity','1');
+	} else {
+      		$('[data-index=' + data.name + ']').attr('opacity','0.5');
+	}
 
 	console.log('change color of ' + data.name + ' to: ' + data.fill );
 
