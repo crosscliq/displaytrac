@@ -14,7 +14,7 @@
           				initial: {
             				fill: 'red',
             				stroke: '#0088cc',
-					opacity: '0.5'
+					opacity: '0.3'
           				}
     			 },
 
@@ -148,7 +148,7 @@
 	if (data.fill=="green") {
        	$('[data-index=' + data.name + ']').attr('opacity','1');
 	} else {
-      		$('[data-index=' + data.name + ']').attr('opacity','0.5');
+      		$('[data-index=' + data.name + ']').attr('opacity','0.3');
 	}
 
 	console.log('change color of ' + data.name + ' to: ' + data.fill );

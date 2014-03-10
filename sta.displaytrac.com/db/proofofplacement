@@ -4,7 +4,7 @@
         "placements": [
             {
                 "href": "assets\/san_diego1.jpg",
-                "address": "11101 South Kedzie Ave. Chicago, IL 60655",
+                "address": "953 Orange Ave. Coronado, CA 92118",
                 "time": "2013-11-21 12:04:02",
                 "img": "assets\/san_diego1.jpg"
             },
@@ -16,7 +16,7 @@
             },
             {
                 "href": "assets\/STA_Dec_V1812after.jpg",
-                "address": "5220 South Hwy 360. Grand Prairie, TX 75052",
+                "address": "11101 South Kedzie Ave. Chicago, IL 60655",
                 "time": "2013-11-21 12:04:02",
                 "img": "assets\/STA_Dec_V1812after.jpg"
             }

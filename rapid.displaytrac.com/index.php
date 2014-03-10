@@ -1,9 +1,7 @@
 <?php
-
 $f3=require('lib/base.php');
 
 $f3->set('AUTOLOAD','pusherserver/lib/');
-
 
 function nodePusher($id, $child, $data = array()) {
 	
