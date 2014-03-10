@@ -1,0 +1,171 @@
+{
+    "52d430367f2908.56327734": {
+        "key": "f3-assets",
+        "title": "Media Assets",
+        "route": "",
+        "icon": "fa fa-picture-o",
+        "children": [
+            {
+                "title": "Library",
+                "route": "\/admin\/assets",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/asset",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52d430367f7f79.65403410": {
+        "key": "f3-blog",
+        "title": "Blog",
+        "route": "",
+        "icon": "fa fa-ticket",
+        "children": [
+            {
+                "title": "Posts",
+                "route": "\/admin\/blog\/posts",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/blog\/post\/create",
+                "icon": "fa fa-plus"
+            },
+            {
+                "title": "Categories",
+                "route": "\/admin\/blog\/categories",
+                "icon": "fa fa-folder"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/blog\/category\/create",
+                "hidden": true
+            }
+        ]
+    },
+    "52d430367f9856.39032520": {
+        "key": "f3-modules",
+        "title": "Modules",
+        "route": "",
+        "icon": "fa fa-building",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/modules",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New",
+                "route": "\/admin\/module\/create",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52d430367fb408.71487532": {
+        "key": "fa-user",
+        "title": "Users",
+        "route": "",
+        "icon": "fa fa-user",
+        "children": [
+            {
+                "title": "List",
+                "route": "\/admin\/users",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New User",
+                "route": "\/admin\/user",
+                "icon": "fa fa-plus"
+            },
+            {
+                "title": "Detail",
+                "route": "\/admin\/user\/view",
+                "hidden": true
+            },
+            {
+                "title": "Groups",
+                "route": "\/admin\/users\/groups",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New Group",
+                "route": "\/admin\/users\/group",
+                "icon": "fa fa-plus"
+            }
+        ]
+    },
+    "52d430367fcf33.37271834": {
+        "title": "Navigation",
+        "route": "",
+        "icon": "fa fa-tasks",
+        "children": [
+            {
+                "title": "Menus",
+                "route": "\/admin\/menus",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Add New Menu",
+                "route": "\/admin\/menu",
+                "icon": "fa fa-plus",
+                "hidden": true
+            },
+            {
+                "title": "Menu Items",
+                "route": "\/admin\/menus\/items",
+                "icon": "fa fa-sitemap",
+                "hidden": true
+            },
+            {
+                "title": "Add New Menu Item",
+                "route": "\/admin\/menus\/item",
+                "icon": "fa fa-plus",
+                "hidden": true
+            }
+        ]
+    },
+    "52d430367fe316.71884177": {
+        "title": "System",
+        "route": "",
+        "icon": "fa fa-cogs",
+        "children": [
+            {
+                "title": "Settings",
+                "route": "\/admin\/settings",
+                "icon": "fa fa-cogs"
+            },
+            {
+                "title": "Rebuild Admin Menu",
+                "route": "\/admin\/system\/rebuildAdminMenu",
+                "icon": "fa fa-retweet"
+            },
+            {
+                "title": "Diagnostics",
+                "route": "\/admin\/system\/diagnostics",
+                "icon": "fa fa-heart"
+            },
+            {
+                "title": "Logs",
+                "route": "\/admin\/logs",
+                "icon": "fa fa-list"
+            },
+            {
+                "title": "Log Detail",
+                "route": "\/admin\/log",
+                "hidden": true
+            },
+            {
+                "title": "Queue",
+                "route": "\/admin\/queue",
+                "icon": "fa fa-refresh"
+            },
+            {
+                "title": "Queue Detail",
+                "route": "\/admin\/queueitem",
+                "hidden": true
+            }
+        ]
+    }
+}

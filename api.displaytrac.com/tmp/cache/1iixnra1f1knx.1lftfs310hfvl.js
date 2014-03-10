@@ -1,0 +1,1 @@
+a:3:{i:0;s:270:"$(function(){if((document.location.host.indexOf('.dev')>-1)||(document.location.host.indexOf('modernui')>-1)){$("<script/>").attr('src','/site/js/metro/metro-loader.js').appendTo($('head'));}else{$("<script/>").attr('src','/site/js/metro.min.js').appendTo($('head'));}})";i:1;d:1393294766.193294;i:2;i:0;}
