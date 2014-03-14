@@ -279,6 +279,26 @@ $f3->route('GET /m/global/@id/@product',
   }
 );
 
+$f3->route('GET /m/global/@id/finish',
+  function($f3) {
+
+
+
+      $data = array();
+    $data['type'] = 'node';
+    $data['name'] = $f3->get('PARAMS.id');
+    $data['color'] = 'Green';
+    $data['link'] = '/m/global';
+
+                $view=new View;
+                nodePusher($f3->get('SESSION.id'), $f3->get('SESSION.id').'global', $data);
+
+            $f3->mock('GET /map/update/S'.$f3->get("SESSION.id").'/green');
+   
+        echo $view->render('m/finished.html');
+
+  }
+);
 
 
 
