@@ -99,7 +99,8 @@ function error() {
     <!-- header wrapper ends --> 
     
    <!-- notification starts -->
-    <p class="topNotification">TracTag# 3sadfer323rrse233<br>Current Date: 4/12/14<br>Current Location: Best Buy #527 - 261 W 2100 S, Salt Lake City<a href="" class="notificationButton"></a></span></p>
+    <p class="topNotification">TracTag# 3sadfer323rrse233<br>Current Date: <?php $date = new DateTime();
+echo $date->format('m/d/Y'); ?><br>Current Location: #527 - 261 W 2100 S, Salt Lake City<a href="" class="notificationButton"></a></span></p>
       <!-- notification ends -->
     
     <!-- page wrapper starts -->
@@ -143,8 +144,8 @@ function error() {
           <div class="form-group child">
             <label for="install-cat">What is the install category?</label>
             <select name="install-cat">
-              <option value="1">Best Buy store problem</option>
-              <option value="2">Samsung Product missing or not available</option>
+              <option value="1">Retail store problem</option>
+              <option value="2">Brand Product missing or not available</option>
               <option value="3">Installation issue</option>
               <option value="4">Display issue - missing or broken parts / pieces</option>
             </select>
