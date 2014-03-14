@@ -7476,6 +7476,41 @@ div.glyphicons.glyphicon-primary i:before {
 	width: 100px;
 	margin: 0 auto;
 }
+.hhg {
+	background:url(../images/company_logos/hhg_logo.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
+.vz {
+	background:url(../images/company_logos/verizon.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
+.mcd{
+	background:url(../images/company_logos/mcd.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
+.homedepot {
+	background:url(../images/company_logos/homedepot.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
+.starbucks {
+	background:url(../images/company_logos/starbucks.png) no-repeat;
+	height: 45px;
+	background-size: 100%;
+	width: 100px;
+	margin: 0 auto;
+}
 .details .white { color:#fff!important; }
 .thumb .details { display:none; }
 .thumb:hover .details { 

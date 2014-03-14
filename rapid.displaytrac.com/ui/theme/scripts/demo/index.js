@@ -13,39 +13,44 @@ $(function()
 
 	/* nav slide */
 
-	var cI = 1;
-	var tI = ( $( 'div.navItm' ).length + 1 );
-
+	var cI = 2;
+	var aI = 5;
+	var tI = ( $( 'div.navItm' ).length +1  );
+	console.log(tI);
 	$('#content .widget-nav-group .chevron-right').click(function(e) {
-		console.log('click right ' + cI);
+		
 		e.preventDefault();
 
-			if ( $('.navItm:nth-child( ' + tI + '  )').hasClass('hidden') ) {
-			  cI++;
+			console.log('current index: ' + (aI+cI));
+			
+			if ( $('.navItm:nth-child( ' + (aI+cI) + '  )').hasClass('hidden') ) {
+			
+			
+			console.log('click right ' + cI);
+			 
+			  $('.navItm:nth-child( ' + (cI) + '  )').removeClass('span2').addClass('hidden');
+			  $('.navItm:nth-child( ' + (aI+cI) + '  )').removeClass('hidden').addClass('span2');
+			cI++;
 			 $('[data-slide="prev"]').removeClass('disabled');
-			  console.log(cI);
-			  //$('.navItm').last().removeClass('hidden');
-			  $('.navItm:nth-child( ' + cI + '  )').removeClass('span2').addClass('hidden');
-			  $('.navItm:nth-child( ' + tI + '  )').removeClass('hidden').addClass('span2');
-
-			} else {
+			
 			}
 		
 	});
 
 	$('#content .widget-nav-group .chevron-left').click(function(e) {
-		console.log('click left ' + cI); 
+		
 		e.preventDefault();
 	
-			if ( $('.navItm:nth-child( ' + cI + '  )').hasClass('hidden') ) {
-			//$('[data-slide="next"]').removeClass('disabled');
-			  console.log(cI);
-			  //$('.navItm').last().removeClass('hidden');
-			  $('.navItm:nth-child( ' + tI + '  )').removeClass('span2').addClass('hidden');
-			  $('.navItm:nth-child( ' + cI + '  )').removeClass('hidden').addClass('span2');
-	  	  cI--;
-			} else {
-			//	$('[data-slide="prev"]').addClass('disabled');
+			if ( $('.navItm:nth-child( ' + (cI-1) + '  )').hasClass('hidden') ) {
+			
+			
+			console.log('click left ' + cI);
+			 cI--;
+			  $('.navItm:nth-child( ' + (aI+cI) + '  )').removeClass('span2').addClass('hidden');
+			  $('.navItm:nth-child( ' + (cI) + '  )').removeClass('hidden').addClass('span2');
+			
+			 $('[data-slide="prev"]').removeClass('disabled');
+			
 			}
 	
 	});
