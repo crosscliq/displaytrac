@@ -279,6 +279,28 @@ $f3->route('GET /m/global/@id/@product',
   }
 );
 
+$f3->route('GET|POST /map/@lat/@lng/@name/@color',
+    function($f3) {
+            
+        //event to pusher
+$app_id = '59967';
+$app_key = 'f3b8b0aeaf31c105168e';
+$app_secret = '87a99b695fda2400d4fd';
+
+$pusher = new Pusher( $app_key, $app_secret, $app_id );
+
+$data = array();
+$data['lat'] = $f3->get('PARAMS.lat');
+$data['lng'] = $f3->get('PARAMS.lng');
+$data['name'] = $f3->get('PARAMS.name');
+$data['fill'] = $f3->get('PARAMS.color');
+
+    $event =    $pusher->trigger('trafficmap', 'addTraffic', $data );
+   
+
+    }
+);
+
 $f3->route('GET|POST /map/update/@name/@color',
     function($f3) {
             
